@@ -5,11 +5,26 @@
       <bannerTop></bannerTop>
     </div>
 
-    <radio></radio>
+    <!-- <radio></radio> -->
 
-    <div class="botones_banner" v-loading="loading">
+    <!-- <div class="botones_banner" v-loading="loading">
       <a :href="botones.url" v-for="botones in botones_banner.data" :key="botones.key" class="botones_banner_movil" target="_blank">
         <img :src="`https://intranet.meta.gov.co/web_urls_navegacion/${botones.imagen}`">
+      </a>
+    </div> -->
+
+    <div class="botones_banner" v-loading="loading">
+      <a class="botones_banner_movil">
+        <img src="../assets/botones/b1.png">
+      </a>
+      <a class="botones_banner_movil">
+        <img src="../assets/botones/b2.png">
+      </a>
+      <a class="botones_banner_movil">
+        <img src="../assets/botones/b3.png">
+      </a>
+      <a class="botones_banner_movil">
+        <img src="../assets/botones/b4.png">
       </a>
     </div>
 
@@ -22,7 +37,7 @@
     </div>
 
     <div class="contenido">
-      <div class="noticias" v-loading="loadingNoticias" element-loading-text="Loading..." element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
+      <!-- <div class="noticias" v-loading="loadingNoticias" element-loading-text="Loading..." element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
 
         <div class="noticias_contenedor" v-for="noticia in noticias.slice(0, cantidadNoticias.cantidad.cantidad)" :key="noticia.idTimeline">
 
@@ -83,27 +98,36 @@
           </el-col>
         </div>
 
-      </div>
+      </div> -->
       <div class="lateral">
-        <iframe class="lateral_video" v-if="video_youtube" :src="`https://www.youtube.com/embed/${video_youtube.data.url}`" frameborder="0" allowfullscreen>
+        <!-- <iframe class="lateral_video" v-if="video_youtube" :src="`https://www.youtube.com/embed/${video_youtube.data.url}`" frameborder="0" allowfullscreen>
+        </iframe> -->
+        <iframe class="lateral_video" v-if="video_youtube" src="https://www.youtube.com/embed/j8CUkpm5vek" frameborder="0" allowfullscreen>
         </iframe>
+        <!-- https://youtu.be/j8CUkpm5vek -->
+        <br>
+
+        <div class="social_botones_cuadro" style="width:100%">
+          <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJpSytf-8tPo4RNiqM54NzV0M&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo" allowfullscreen></iframe>
+        </div>
+
         <br>
         <div class="lateral_line">
           <p></p>
         </div>
 
-        <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 2px; border: 0">
+        <!-- <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 2px; border: 0">
           <div class="lateral_cuadros" v-for="servicio in servicios.urls" :key="servicio.id">
             <a :href="servicio.url" target="_blank" style="width:100%">
               <img :src="`https://intranet.meta.gov.co/web_img_urls/${servicio.imagen}`" width="100%" style="width:100%">
             </a>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
 
-    <div class="social_botones">
+    <!-- <div class="social_botones">
 
       <div class="social_botones_cuadro">
 
@@ -123,16 +147,16 @@
         <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJpSytf-8tPo4RNiqM54NzV0M&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo" allowfullscreen></iframe>
       </div>
 
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import bannerTop from "./banner.vue";
-import radio from "./radio";
+// import radio from "./radio";
 import axios from "axios";
 export default {
-  components: { bannerTop, radio },
+  components: { bannerTop },
   created() {
     axios
       .get("https://intranet.meta.gov.co/web/url_navegacion/listado")
@@ -283,7 +307,7 @@ export default {
 .botones_banner_movil {
   min-width: 199px;
   width: 100%;
-  height: 128px;
+  /* height: 128px; */
   display: flex;
   flex: 1;
   justify-content: space-around;
@@ -481,7 +505,7 @@ export default {
 .social_botones_cuadro {
   display: flex;
   flex: 1;
-  max-width: 32%;
+  /* max-width: 32%; */
   min-width: 300px;
   height: 500px;
   background-color: #f6f6f6;

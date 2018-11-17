@@ -2,9 +2,9 @@
   <div id="menuTop">
     <div class="logo">
       <router-link to="/">
-        <img class="logo_meta" src="../assets/logo.png" />
+        <img class="logo_meta" src="../assets/logo_kujana.png" />
       </router-link>
-      <img class="logo_colombia" src="../assets/colombia.png" />
+      <!-- <img class="logo_colombia" src="../assets/colombia.png" /> -->
     </div>
     <nav class="go_menu">
       <ul class="go_menu_list">
@@ -31,7 +31,11 @@
             </li>
           </ul>
         </li>
+        <li class="go_menu_list_item">
+          <a href="https://www.facebook.com/FabLabKujana/" target="_blank"><img src="../assets/facebook.svg" width="12px" style="color: blue"></a>
+        </li>
       </ul>
+
     </nav>
 
     <!-- <a href="javascript:void(0);" class="icon" v-on:click="transition = !transition">&#9776;</a> -->
@@ -107,295 +111,35 @@ export default {
           url: "/"
         },
         {
-          id: "1",
-          titulo: "Nuestra entidad",
+          titulo: "Quiénes somos",
+          haveChildren: false,
+          childrenDynamic: false,
+          url: "/"
+        },
+        {
+          id: "10",
+          titulo: "Experiencia",
           haveChildren: true,
           childrenDynamic: true,
           url: "/",
           children: [
             {
-              titulo: "Nuestra Gobernadora",
+              titulo: "Kujana - Pueblito llanero",
               haveChildren: false,
               childrenDynamic: false,
               url: "/entidad/gobernadora"
             },
             {
-              titulo: "Gabinete de gobierno",
+              titulo: "Kujana - Itinerante",
               haveChildren: false,
               childrenDynamic: false,
               url: "/micrositio/93"
-            },
-            {
-              titulo: "Elementos Estrategicos",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/micrositio/67"
-            },
-            {
-              id: "9",
-              titulo: "Gestion de gobierno",
-              haveChildren: true,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link:
-                    "http://www.meta.gov.co/web/content/gesti%C3%B3n-de-gobierno",
-                  newtab: "true"
-                }
-              },
-              children: [
-                {
-                  titulo: "Control y rendicion de cuentas",
-                  haveChildren: false,
-                  childrenDynamic: false,
-                  url: "/micrositio/95"
-                },
-                {
-                  titulo:
-                    "Plan de Accion general y plan operativo anual de inversiones (POAI)",
-                  haveChildren: false,
-                  childrenDynamic: false,
-                  url: {
-                    path: "/redirect",
-                    params: {
-                      link: "https://meta.gov.co/micrositio/53",
-                      newtab: "false"
-                    }
-                  }
-                }
-              ],
-              childrenDynamic: true
-            },
-            {
-              id: "2",
-              titulo: "Secretarías",
-              haveChildren: true,
-              childrenDynamic: true,
-              url: "/"
-            },
-            {
-              id: "7",
-              titulo: "Institutos y Gerencias",
-              haveChildren: true,
-              childrenDynamic: true,
-              url: "/",
-              children: [
-                {
-                  titulo: "Oficina promotora de paz",
-                  haveChildren: false,
-                  childrenDynamic: false,
-                  url: {
-                    path: "/redirect",
-                    params: {
-                      link:
-                        "http://www.meta.gov.co/web/content/oficina-promotora-de-paz",
-                      newtab: "true"
-                    }
-                  }
-                }
-              ],
-              childrenDynamic: true
-            },
-            {
-              titulo: "Plan de desarrollo",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link: "http://www.meta.gov.co/web/content/plan-de-desarrollo",
-                  newtab: "true"
-                }
-              }
-            },
-            {
-              titulo: "Control interno",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link: "https://meta.gov.co/micrositio/103",
-                  newtab: "false"
-                }
-              }
             }
           ]
         },
         {
-          id: "3",
-          titulo: "El Meta",
-          haveChildren: true,
-          childrenDynamic: true,
-          url: "/",
-          children: [
-            {
-              titulo: "Nuestro departamento",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link:
-                    "http://www.meta.gov.co/web/content/nuestro-departamento",
-                  newtab: "true"
-                }
-              }
-            },
-            {
-              titulo: "Municipios",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/"
-            },
-            {
-              titulo: "Agremiaciones",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/"
-            },
-            {
-              titulo: "Gobernadores",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link: "http://www.meta.gov.co/web/content/gobernadores",
-                  newtab: "true"
-                }
-              }
-            },
-            {
-              titulo: "Mapas",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link:
-                    "http://www.meta.gov.co/web/content/departamento-del-meta",
-                  newtab: "true"
-                }
-              }
-            },
-            {
-              titulo: "Portal de niños",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: ""
-            }
-          ],
-          childrenDynamic: true
-        },
-        {
-          id: "4",
-          titulo: "Documentación",
-          haveChildren: true,
-          childrenDynamic: true,
-          url: "/",
-          children: [
-            {
-              titulo: "Centro de documentation",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/documentacion/documentos"
-            },
-            {
-              titulo: "Politicas publicas",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link: "http://www.meta.gov.co/web/content/equidad-de-genero",
-                  newtab: "true"
-                }
-              }
-            },
-            {
-              titulo: "Gestión Documental Archivo",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link: "https://meta.gov.co/micrositio/87",
-                  newtab: "false"
-                }
-              }
-            },
-            {
-              titulo: "Convocatorias",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/documentacion/convocatorias"
-            },
-            {
-              titulo: "Transparencia",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/transparencia"
-            }
-          ],
-          childrenDynamic: true
-        },
-        {
-          id: "5",
-          titulo: "Prensa",
-          haveChildren: true,
-          childrenDynamic: true,
-          url: "/",
-          children: [
-            {
-              titulo: "Archivo de noticias",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/prensa"
-            },
-            // {
-            //   titulo: 'Galeria fotografica',
-            //   haveChildren: false,
-            //   childrenDynamic: false,
-            //   url: "/"
-            // },
-            {
-              titulo: "Galeria de videos",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link: "https://www.youtube.com/user/GobMeta/videos",
-                  newtab: "true"
-                }
-              }
-            },
-            {
-              titulo: "Galeria de audios",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: {
-                path: "/redirect",
-                params: {
-                  link: "http://www.meta.gov.co/web/content/galeria-de-audios",
-                  newtab: "true"
-                }
-              }
-            },
-            {
-              titulo: "Manual de identidad de marca",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/"
-            }
-          ],
-          childrenDynamic: true
-        },
-        {
           id: "6",
-          titulo: "Atencion al ciudadano",
+          titulo: "Contáctanos",
           haveChildren: false,
           childrenDynamic: false,
           url: "/micrositio/26"
@@ -420,25 +164,25 @@ export default {
 <style scoped>
 #menuTop {
   width: 100%;
-  height: 80px;
+  /* height: 80px; */
   top: 0px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 11;
 }
 .go_menu * {
   list-style: none;
   color: #48576a;
-  font-size: 15px;
+  font-size: 16px;
 }
 .go_menu {
   margin: 0px 5px;
 }
 .go_menu_list {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 .go_menu_list > .go_menu_list_item {
   border-bottom: 5px solid transparent;
@@ -496,7 +240,7 @@ export default {
   opacity: 1;
 }
 .logo {
-  width: 320px;
+  width: 280px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -504,7 +248,7 @@ export default {
   margin-left: 10px;
 }
 .logo_meta {
-  height: 70px;
+  height: 55px;
 }
 .logo_colombia {
   height: 64px;

@@ -2,21 +2,18 @@
   <div id="menuTop">
 
     <div class="encabezado_menu">
-      <a href="https://intranet.meta.gov.co" target="_blank"><span>Intranet </span></a>
-      <a href="../../static/manual_intranet.pdf" target="_blank"><span>Manual de ayuda</span></a>
+      <a href="https://www.google.com.co/maps/dir/4.1595978,-73.637553/parque+malocas+villavicencio+google+maps/@4.1397162,-73.6370323,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8e3e2eb8ddd0940d:0x9b367c3b38d31b60!2m2!1d-73.5749169!2d4.1250804" target="_blank"><span>¿Cómo llegar? </span></a>
 
     </div>
 
-    
-
     <div class="encabezado_icons">
-      <Buscador/>
+      <!-- <Buscador /> -->
       <!-- <span><b>A</b></span>
       <span><b>A</b>-</span>
       <span><b>A</b>+</span> -->
-      
-      <a href="https://www.facebook.com/GobMeta/" target="_blank"><img src="../assets/facebook.svg" ></a>
-      <a href="https://twitter.com/marcela_amayag" target="_blank"><img src="../assets/twitter.svg"></a>
+
+      <a href="https://www.facebook.com/FabLabKujana/" target="_blank"><img src="../assets/facebook.svg"></a>
+      <!-- <a href="https://twitter.com/marcela_amayag" target="_blank"><img src="../assets/twitter.svg"></a> -->
     </div>
 
   </div>
