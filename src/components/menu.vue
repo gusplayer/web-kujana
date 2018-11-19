@@ -127,22 +127,29 @@ export default {
               titulo: "Kujana - Pueblito llanero",
               haveChildren: false,
               childrenDynamic: false,
-              url: "/entidad/gobernadora"
+              url: "/"
             },
             {
               titulo: "Kujana - Itinerante",
               haveChildren: false,
               childrenDynamic: false,
-              url: "/micrositio/93"
+              url: "/"
             }
           ]
+        },
+        {
+          id: "8",
+          titulo: "Noticias",
+          haveChildren: false,
+          childrenDynamic: false,
+          url: "/prensa"
         },
         {
           id: "6",
           titulo: "Contáctanos",
           haveChildren: false,
           childrenDynamic: false,
-          url: "/micrositio/26"
+          url: "/"
         }
       ],
       menuDynamic: []

@@ -4,10 +4,13 @@
     <div class="uper_footer">
       <div class="uper_footer_content">
         <!-- <a v-for="feet in footers.data" :key="feet.id">
-          <img :src="`https://intranet.meta.gov.co/footer_img/${feet.imagen}`" >
+          <img :src="`https://intranet.meta.gov.co/footer_img/${feet.imagen}`">
         </a> -->
         <a>
-          <img src="">
+          <img src="../assets/logo.png">
+        </a>
+        <a>
+          <img src="../assets/colciencias.jpg">
         </a>
 
       </div>
@@ -33,9 +36,9 @@
             <router-link to="/soporte">
               <p>Soporte</p>
             </router-link>
-            <router-link to="/prensa">
+            <!-- <router-link to="/prensa">
               <p>Noticias</p>
-            </router-link>
+            </router-link> -->
           </div>
           <div class="footer_popular">
             <h5>Accesibilidad</h5>
@@ -63,8 +66,8 @@
           <div class="footer_siguenos">
             <h5>Siguenos</h5>
             <div class="footer_siguenos_icons">
-              <a href="https://www.facebook.com/GobMeta/" target="_blank"><img src="../assets/facebook.svg"></a>
-              <a href="https://twitter.com/marcela_amayag" target="_blank"><img src="../assets/twitter.svg"></a>
+              <a href="https://www.facebook.com/FabLabKujana//" target="_blank"><img src="../assets/facebook.svg">FabLabKujana</a>
+              <!-- <a href="https://twitter.com/marcela_amayag" target="_blank"><img src="../assets/twitter.svg"></a> -->
             </div>
             <span class="footer_siguenos_pbx">PBX: (+57) 8 681 85 00 | Línea Gratuita: 01 8000 129 202
               <br><br>
@@ -94,7 +97,7 @@
             </a>
           </p>
           <p>
-            - Copyright © Gobernación del Meta
+            - Copyright © FABLAB KUJANA
           </p>
         </div>
       </div>
@@ -132,16 +135,16 @@ export default {
 }
 .uper_footer_content {
   max-width: 1200px;
-  width: 100%;
+  max-width: 800px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .uper_footer_content img {
   height: 66px;
   width: auto;
+  margin-left: 50px;
 }
 
 .footer {

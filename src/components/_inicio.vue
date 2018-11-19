@@ -37,7 +37,7 @@
     </div>
 
     <div class="contenido">
-      <!-- <div class="noticias" v-loading="loadingNoticias" element-loading-text="Loading..." element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
+      <div class="noticias" v-loading="loadingNoticias" element-loading-text="Loading..." element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
 
         <div class="noticias_contenedor" v-for="noticia in noticias.slice(0, cantidadNoticias.cantidad.cantidad)" :key="noticia.idTimeline">
 
@@ -98,7 +98,7 @@
           </el-col>
         </div>
 
-      </div> -->
+      </div>
       <div class="lateral">
         <!-- <iframe class="lateral_video" v-if="video_youtube" :src="`https://www.youtube.com/embed/${video_youtube.data.url}`" frameborder="0" allowfullscreen>
         </iframe> -->
@@ -186,9 +186,11 @@ export default {
           this.cantidadNoticias = response.data;
         });
 
-      axios.get("https://intranet.meta.gov.co/api/noticias").then(response => {
-        this.noticias = response.data.timeline;
-      });
+      axios
+        .get("https://panel.fablabkujana.com/api/noticias")
+        .then(response => {
+          this.noticias = response.data.timeline;
+        });
       this.loadingNoticias = false;
     }, 1000);
   },
@@ -508,6 +510,7 @@ export default {
   /* max-width: 32%; */
   min-width: 300px;
   height: 500px;
+  max-height: 500px;
   background-color: #f6f6f6;
   box-shadow: 0 2px 4px 0 rgba(154, 152, 152, 0.5);
   overflow: auto;
