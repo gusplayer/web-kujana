@@ -80,7 +80,7 @@
                                  }">
               <el-card :body-style="{ padding: '0px' }">
                 <div class="card-contenedor-imagen">
-                  <img v-if="noticia.imagenes[0]" :src="`https://intranet.meta.gov.co/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`" class="card-image">
+                  <img v-if="noticia.imagenes[0]" :src="`https://panel.fablabkujana.com/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`" class="card-image">
                   <img v-else src="../assets/sinimagen.jpg" class="card-image">
                 </div>
 
@@ -108,7 +108,7 @@
         <br>
 
         <div class="social_botones_cuadro" style="width:100%">
-          <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJpSytf-8tPo4RNiqM54NzV0M&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo" allowfullscreen></iframe>
+          <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJDZTQ3bguPo4RYBvTODt8Nps&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo" allowfullscreen></iframe>
         </div>
 
         <br>
@@ -152,26 +152,26 @@
 </template>
 
 <script>
-import bannerTop from "./banner.vue";
+import bannerTop from './banner.vue';
 // import radio from "./radio";
-import axios from "axios";
+import axios from 'axios';
 export default {
   components: { bannerTop },
   created() {
     axios
-      .get("https://intranet.meta.gov.co/web/url_navegacion/listado")
+      .get('https://intranet.meta.gov.co/web/url_navegacion/listado')
       .then(response => {
         this.botones_banner = response.data;
       });
 
     axios
-      .get("https://intranet.meta.gov.co/web/urls_externas/listado")
+      .get('https://intranet.meta.gov.co/web/urls_externas/listado')
       .then(response => {
         this.servicios = response.data;
       });
   },
   mounted() {
-    axios.get("https://intranet.meta.gov.co/web/url_youtube").then(response => {
+    axios.get('https://intranet.meta.gov.co/web/url_youtube').then(response => {
       this.video_youtube = response.data;
     });
 
@@ -181,13 +181,13 @@ export default {
 
     setTimeout(() => {
       axios
-        .get("https://intranet.meta.gov.co/api/cantidad/noticias")
+        .get('https://intranet.meta.gov.co/api/cantidad/noticias')
         .then(response => {
           this.cantidadNoticias = response.data;
         });
 
       axios
-        .get("https://panel.fablabkujana.com/api/noticias")
+        .get('https://panel.fablabkujana.com/api/noticias')
         .then(response => {
           this.noticias = response.data.timeline;
         });
@@ -196,13 +196,13 @@ export default {
   },
   data() {
     return {
-      input: "",
+      input: '',
       noticias: [],
       botones_banner: [],
       servicios: [],
       video_youtube: null,
       errors: [],
-      cantidadNoticias: "",
+      cantidadNoticias: '',
       loading: true,
       loadingNoticias: true
     };
@@ -227,10 +227,10 @@ export default {
     },
     videoYoutube(urlVideo) {
       let index;
-      if (urlVideo.includes("?v=")) {
-        index = urlVideo.indexOf("?v=") + 3;
+      if (urlVideo.includes('?v=')) {
+        index = urlVideo.indexOf('?v=') + 3;
       } else {
-        index = urlVideo.indexOf(".be/") + 4;
+        index = urlVideo.indexOf('.be/') + 4;
       }
       let idYoutube = urlVideo.substring(index);
       return idYoutube;
@@ -238,7 +238,7 @@ export default {
   },
   computed: {
     setStyle() {
-      let image = require("../assets/sinimagen.jpg");
+      let image = require('../assets/sinimagen.jpg');
       return `background-image:url('${image}'); background-size:cover`;
     }
   }
@@ -594,7 +594,7 @@ export default {
   .card-clearfix:before,
   .card-clearfix:after {
     display: table;
-    content: "";
+    content: '';
   }
 
   .card-clearfix:after {
