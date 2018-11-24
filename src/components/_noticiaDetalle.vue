@@ -12,7 +12,9 @@
     </router-link>
 
     <div class="noticia">
-      <img :src="`https://panel.fablabkujana.com/imagen_timeline/${noticias.imagenes[0].nombre_imagen}`"
+      <!-- <img :src="`https://panel.fablabkujana.com/imagen_timeline/${noticias.imagenes[0].nombre_imagen}`"
+      v-if="noticias.imagenes[0]"> -->
+       <img :src="`${noticias.imagenes[0].nombre_imagen}`"
       v-if="noticias.imagenes[0]">
       <h2>{{noticias.titulo}}</h2><br>
       <p v-html="noticias.contenido"></p>
@@ -35,8 +37,8 @@
 </template>
 
 <script>
-import Breadcrumb from './breadcrumb.vue';
-import axios from 'axios';
+import Breadcrumb from "./breadcrumb.vue";
+import axios from "axios";
 export default {
   created() {
     axios

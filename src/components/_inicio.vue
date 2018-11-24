@@ -41,6 +41,8 @@
 
         <div class="noticias_contenedor" v-for="noticia in noticias.slice(0, cantidadNoticias.cantidad.cantidad)" :key="noticia.idTimeline">
 
+          <!-- <div class="noticias_contenedor_foto" v-if="noticia.imagenes[0]" :style="coverImagen(noticia)">
+          </div> -->
           <div class="noticias_contenedor_foto" v-if="noticia.imagenes[0]" :style="coverImagen(noticia)">
           </div>
           <div class="noticias_contenedor_foto" v-else :style="setStyle">
@@ -107,10 +109,6 @@
         <!-- https://youtu.be/j8CUkpm5vek -->
         <br>
 
-        <div class="social_botones_cuadro" style="width:100%">
-          <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJDZTQ3bguPo4RYBvTODt8Nps&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo" allowfullscreen></iframe>
-        </div>
-
         <br>
         <div class="lateral_line">
           <p></p>
@@ -123,6 +121,63 @@
             </a>
           </div>
         </div> -->
+
+        <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
+          <div class="lateral_cuadros">
+            <a href="http://fabacademy.org/archives/2015/sa/labs/medellin/index.html" target="_blank" style="width:100%">
+              <img src="../assets/laterales/BL_1.jpg" width="100%" style="width:100%">
+            </a>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
+          <div class="lateral_cuadros">
+            <a href="http://fab.pe" target="_blank" style="width:100%">
+              <img src="../assets/laterales/BL_2.jpg" width="100%" style="width:100%">
+            </a>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
+          <div class="lateral_cuadros">
+            <a href="http://fablab.veritas.cr" target="_blank" style="width:100%">
+              <img src="../assets/laterales/BL_3.jpg" width="100%" style="width:100%">
+            </a>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
+          <div class="lateral_cuadros">
+            <a href="http://www.fabfoundation.org" target="_blank" style="width:100%">
+              <img src="../assets/laterales/BL_4.jpg" width="100%" style="width:100%">
+            </a>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
+          <div class="lateral_cuadros">
+            <a href="http://www.fablab.uchile.cl" target="_blank" style="width:100%">
+              <img src="../assets/laterales/BL_5.jpg" width="100%" style="width:100%">
+            </a>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
+          <div class="lateral_cuadros">
+            <a href=" https://www.fablabmaya.org" target="_blank" style="width:100%">
+              <img src="../assets/laterales/BL_6.jpg" width="100%" style="width:100%">
+            </a>
+          </div>
+        </div>
+
+        <br>
+        <div class="lateral_line">
+          <p></p>
+        </div>
+
+        <div class="social_botones_cuadro" style="width:100%; max-height:400px">
+          <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJDZTQ3bguPo4RYBvTODt8Nps&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo" allowfullscreen></iframe>
+        </div>
 
       </div>
     </div>
@@ -152,26 +207,26 @@
 </template>
 
 <script>
-import bannerTop from './banner.vue';
+import bannerTop from "./banner.vue";
 // import radio from "./radio";
-import axios from 'axios';
+import axios from "axios";
 export default {
   components: { bannerTop },
   created() {
     axios
-      .get('https://intranet.meta.gov.co/web/url_navegacion/listado')
+      .get("https://intranet.meta.gov.co/web/url_navegacion/listado")
       .then(response => {
         this.botones_banner = response.data;
       });
 
     axios
-      .get('https://intranet.meta.gov.co/web/urls_externas/listado')
+      .get("https://intranet.meta.gov.co/web/urls_externas/listado")
       .then(response => {
         this.servicios = response.data;
       });
   },
   mounted() {
-    axios.get('https://intranet.meta.gov.co/web/url_youtube').then(response => {
+    axios.get("https://intranet.meta.gov.co/web/url_youtube").then(response => {
       this.video_youtube = response.data;
     });
 
@@ -181,13 +236,13 @@ export default {
 
     setTimeout(() => {
       axios
-        .get('https://intranet.meta.gov.co/api/cantidad/noticias')
+        .get("https://intranet.meta.gov.co/api/cantidad/noticias")
         .then(response => {
           this.cantidadNoticias = response.data;
         });
 
       axios
-        .get('https://panel.fablabkujana.com/api/noticias')
+        .get("https://panel.fablabkujana.com/api/noticias")
         .then(response => {
           this.noticias = response.data.timeline;
         });
@@ -196,13 +251,13 @@ export default {
   },
   data() {
     return {
-      input: '',
+      input: "",
       noticias: [],
       botones_banner: [],
       servicios: [],
       video_youtube: null,
       errors: [],
-      cantidadNoticias: '',
+      cantidadNoticias: "",
       loading: true,
       loadingNoticias: true
     };
@@ -221,16 +276,22 @@ export default {
     },
     coverImagen(value) {
       if (value.imagenes[0])
-        return `background-image:url('https://intranet.meta.gov.co/imagen_timeline/${
+        return `background-image:url('${
           value.imagenes[0].nombre_imagen
         }'); background-size:cover`;
     },
+    //     coverImagen(value) {
+    //   if (value.imagenes[0])
+    //     return `background-image:url('https://intranet.meta.gov.co/imagen_timeline/${
+    //       value.imagenes[0].nombre_imagen
+    //     }'); background-size:cover`;
+    // },
     videoYoutube(urlVideo) {
       let index;
-      if (urlVideo.includes('?v=')) {
-        index = urlVideo.indexOf('?v=') + 3;
+      if (urlVideo.includes("?v=")) {
+        index = urlVideo.indexOf("?v=") + 3;
       } else {
-        index = urlVideo.indexOf('.be/') + 4;
+        index = urlVideo.indexOf(".be/") + 4;
       }
       let idYoutube = urlVideo.substring(index);
       return idYoutube;
@@ -238,7 +299,7 @@ export default {
   },
   computed: {
     setStyle() {
-      let image = require('../assets/sinimagen.jpg');
+      let image = require("../assets/sinimagen.jpg");
       return `background-image:url('${image}'); background-size:cover`;
     }
   }
@@ -594,7 +655,7 @@ export default {
   .card-clearfix:before,
   .card-clearfix:after {
     display: table;
-    content: '';
+    content: "";
   }
 
   .card-clearfix:after {

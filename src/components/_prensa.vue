@@ -21,8 +21,11 @@
                            }">
           <el-card :body-style="{ padding: '0px' }">
             <div class="card-contenedor-imagen">
-              <img v-if="noticia.imagenes[0]" :src="`https://panel.fablabkujana.com/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`" class="card-image">
+              <!-- <img :src="`https://panel.fablabkujana.com/imagen_timeline/${noticias.imagenes[0].nombre_imagen}`" v-if="noticias.imagenes[0]" class="card-image"> -->
+              <img v-if="noticia.imagenes[0]" :src="noticia.imagenes[0].nombre_imagen" class="card-image">
+
               <img v-else src="../assets/sinimagen.jpg" class="card-image">
+              <!-- <p>{{noticia.imagenes[0].nombre_imagen}}</p> -->
             </div>
 
             <div style="padding: 14px;">
@@ -42,7 +45,6 @@
     </center>
 
   </div>
-
 </template>
 
 <script>
