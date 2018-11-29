@@ -1,16 +1,35 @@
 <template>
 
-  <div class="prensa" v-loading="loading" element-loading-text="Cargando Noticias.." element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
+  <div
+    class="prensa"
+    v-loading="loading"
+    element-loading-text="Cargando Noticias.."
+    element-loading-spinner="el-icon-loading"
+    element-loading-background="rgba(0, 0, 0, 0.8)"
+  >
 
     <Breadcrumb></Breadcrumb>
-    <BannerMicro :texto="texto" :imagen="imagenBanner"></BannerMicro>
+    <BannerMicro
+      :texto="texto"
+      :imagen="imagenBanner"
+    ></BannerMicro>
 
     <center>
-      <el-input style="width:350px" placeholder="Buscar" prefix-icon="el-icon-search" v-model="search"></el-input>
+      <el-input
+        style="width:350px"
+        placeholder="Buscar"
+        prefix-icon="el-icon-search"
+        v-model="search"
+      ></el-input>
     </center>
 
     <div class="card">
-      <el-col :span="8" v-for="(noticia,index) in filterData" :key="index" class="card-col">
+      <el-col
+        :span="8"
+        v-for="(noticia,index) in filterData"
+        :key="index"
+        class="card-col"
+      >
         <router-link :to="{ name: 'noticia',
                              params: {
                                id: noticia.idTimeline,
@@ -22,9 +41,17 @@
           <el-card :body-style="{ padding: '0px' }">
             <div class="card-contenedor-imagen">
               <!-- <img :src="`https://panel.fablabkujana.com/imagen_timeline/${noticias.imagenes[0].nombre_imagen}`" v-if="noticias.imagenes[0]" class="card-image"> -->
-              <img v-if="noticia.imagenes[0]" :src="noticia.imagenes[0].nombre_imagen" class="card-image">
+              <img
+                v-if="noticia.imagenes[0]"
+                :src="noticia.imagenes[0].nombre_imagen"
+                class="card-image"
+              >
 
-              <img v-else src="../assets/sinimagen.jpg" class="card-image">
+              <img
+                v-else
+                src="../assets/sinimagen.jpg"
+                class="card-image"
+              >
               <!-- <p>{{noticia.imagenes[0].nombre_imagen}}</p> -->
             </div>
 
@@ -32,7 +59,10 @@
               <span class="card-titulo">{{noticia.titulo}}</span>
               <div class="card-bottom card-clearfix">
                 <time class="card-fecha">{{noticia.fecha}}</time>
-                <el-button type="text" class="card-button">Ver más</el-button>
+                <el-button
+                  type="text"
+                  class="card-button"
+                >Ver más</el-button>
               </div>
             </div>
           </el-card>
@@ -41,7 +71,12 @@
     </div>
 
     <center>
-      <el-input style="width:350px" placeholder="Buscar" prefix-icon="el-icon-search" v-model="search"></el-input>
+      <el-input
+        style="width:350px"
+        placeholder="Buscar"
+        prefix-icon="el-icon-search"
+        v-model="search"
+      ></el-input>
     </center>
 
   </div>
@@ -68,7 +103,7 @@ export default {
     return {
       noticias: [],
       texto: null,
-      imagenBanner: require("../assets/prensa.jpg"),
+      imagenBanner: require("../assets/banners/noticias.jpg"),
       search: "",
       loading: true
     };

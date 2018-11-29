@@ -1,7 +1,13 @@
 <template>
   <div class="general">
     <br>
-    <div class="banner" v-loading="loading" element-loading-text="Cargando Contenido..." element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
+    <div
+      class="banner"
+      v-loading="loading"
+      element-loading-text="Cargando Contenido..."
+      element-loading-spinner="el-icon-loading"
+      element-loading-background="rgba(0, 0, 0, 0.8)"
+    >
       <bannerTop></bannerTop>
     </div>
 
@@ -13,7 +19,10 @@
       </a>
     </div> -->
 
-    <div class="botones_banner" v-loading="loading">
+    <div
+      class="botones_banner"
+      v-loading="loading"
+    >
       <a class="botones_banner_movil">
         <img src="../assets/botones/b1.png">
       </a>
@@ -29,7 +38,13 @@
     </div>
 
     <div class="botones_banner_responsive">
-      <a :href="botones.url" v-for="botones in botones_banner.data" :key="botones.key" class="botones_banner_accion" target="_blank">
+      <a
+        :href="botones.url"
+        v-for="botones in botones_banner.data"
+        :key="botones.key"
+        class="botones_banner_accion"
+        target="_blank"
+      >
         <div>
           <span>{{botones.titulo}}</span>
         </div>
@@ -37,20 +52,41 @@
     </div>
 
     <div class="contenido">
-      <div class="noticias" v-loading="loadingNoticias" element-loading-text="Loading..." element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
+      <div
+        class="noticias"
+        v-loading="loadingNoticias"
+        element-loading-text="Loading..."
+        element-loading-spinner="el-icon-loading"
+        element-loading-background="rgba(0, 0, 0, 0.8)"
+      >
 
-        <div class="noticias_contenedor" v-for="noticia in noticias.slice(0, cantidadNoticias.cantidad.cantidad)" :key="noticia.idTimeline">
+        <div
+          class="noticias_contenedor"
+          v-for="noticia in noticias.slice(0, 7)"
+          :key="noticia.idTimeline"
+        >
 
           <!-- <div class="noticias_contenedor_foto" v-if="noticia.imagenes[0]" :style="coverImagen(noticia)">
           </div> -->
-          <div class="noticias_contenedor_foto" v-if="noticia.imagenes[0]" :style="coverImagen(noticia)">
+          <div
+            class="noticias_contenedor_foto"
+            v-if="noticia.imagenes[0]"
+            :style="coverImagen(noticia)"
+          >
           </div>
-          <div class="noticias_contenedor_foto" v-else :style="setStyle">
+          <div
+            class="noticias_contenedor_foto"
+            v-else
+            :style="setStyle"
+          >
           </div>
 
           <div class="noticias_contenedor_texto">
             <h2>{{ noticia.titulo }}</h2>
-            <div :id="`setText${noticia.idTimeline}`" class="noticias_contenedor_p">
+            <div
+              :id="`setText${noticia.idTimeline}`"
+              class="noticias_contenedor_p"
+            >
               <p v-html="contarPalabras(noticia.contenido)+'...'"></p>
             </div>
             <div class="notcicias_bottom">
@@ -71,7 +107,12 @@
         </div>
 
         <div class="card">
-          <el-col :span="8" v-for="noticia in noticias.slice(0, 5)" :key="noticia.key" class="card-col">
+          <el-col
+            :span="8"
+            v-for="noticia in noticias.slice(0, 5)"
+            :key="noticia.key"
+            class="card-col"
+          >
             <router-link :to="{ name: 'noticia',
                                    params: {
                                      id: noticia.idTimeline,
@@ -82,8 +123,16 @@
                                  }">
               <el-card :body-style="{ padding: '0px' }">
                 <div class="card-contenedor-imagen">
-                  <img v-if="noticia.imagenes[0]" :src="`https://panel.fablabkujana.com/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`" class="card-image">
-                  <img v-else src="../assets/sinimagen.jpg" class="card-image">
+                  <img
+                    v-if="noticia.imagenes[0]"
+                    :src="`https://panel.fablabkujana.com/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`"
+                    class="card-image"
+                  >
+                  <img
+                    v-else
+                    src="../assets/sinimagen.jpg"
+                    class="card-image"
+                  >
                 </div>
 
                 <div style="padding: 14px;">
@@ -91,7 +140,10 @@
                   <div class="card-bottom card-clearfix">
                     <time class="card-fecha">{{noticia.fecha}}</time>
 
-                    <el-button type="text" class="card-button">Ver más</el-button>
+                    <el-button
+                      type="text"
+                      class="card-button"
+                    >Ver más</el-button>
 
                   </div>
                 </div>
@@ -104,7 +156,13 @@
       <div class="lateral">
         <!-- <iframe class="lateral_video" v-if="video_youtube" :src="`https://www.youtube.com/embed/${video_youtube.data.url}`" frameborder="0" allowfullscreen>
         </iframe> -->
-        <iframe class="lateral_video" v-if="video_youtube" src="https://www.youtube.com/embed/j8CUkpm5vek" frameborder="0" allowfullscreen>
+        <iframe
+          class="lateral_video"
+          v-if="video_youtube"
+          src="https://www.youtube.com/embed/j8CUkpm5vek"
+          frameborder="0"
+          allowfullscreen
+        >
         </iframe>
         <!-- https://youtu.be/j8CUkpm5vek -->
         <br>
@@ -124,48 +182,96 @@
 
         <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
           <div class="lateral_cuadros">
-            <a href="http://fabacademy.org/archives/2015/sa/labs/medellin/index.html" target="_blank" style="width:100%">
-              <img src="../assets/laterales/BL_1.jpg" width="100%" style="width:100%">
+            <a
+              href="http://fabacademy.org/archives/2015/sa/labs/medellin/index.html"
+              target="_blank"
+              style="width:100%"
+            >
+              <img
+                src="../assets/laterales/BL_1.jpg"
+                width="100%"
+                style="width:100%"
+              >
             </a>
           </div>
         </div>
 
         <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
           <div class="lateral_cuadros">
-            <a href="http://fab.pe" target="_blank" style="width:100%">
-              <img src="../assets/laterales/BL_2.jpg" width="100%" style="width:100%">
+            <a
+              href="http://fab.pe"
+              target="_blank"
+              style="width:100%"
+            >
+              <img
+                src="../assets/laterales/BL_2.jpg"
+                width="100%"
+                style="width:100%"
+              >
             </a>
           </div>
         </div>
 
         <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
           <div class="lateral_cuadros">
-            <a href="http://fablab.veritas.cr" target="_blank" style="width:100%">
-              <img src="../assets/laterales/BL_3.jpg" width="100%" style="width:100%">
+            <a
+              href="http://fablab.veritas.cr"
+              target="_blank"
+              style="width:100%"
+            >
+              <img
+                src="../assets/laterales/BL_3.jpg"
+                width="100%"
+                style="width:100%"
+              >
             </a>
           </div>
         </div>
 
         <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
           <div class="lateral_cuadros">
-            <a href="http://www.fabfoundation.org" target="_blank" style="width:100%">
-              <img src="../assets/laterales/BL_4.jpg" width="100%" style="width:100%">
+            <a
+              href="http://www.fabfoundation.org"
+              target="_blank"
+              style="width:100%"
+            >
+              <img
+                src="../assets/laterales/BL_4.jpg"
+                width="100%"
+                style="width:100%"
+              >
             </a>
           </div>
         </div>
 
         <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
           <div class="lateral_cuadros">
-            <a href="http://www.fablab.uchile.cl" target="_blank" style="width:100%">
-              <img src="../assets/laterales/BL_5.jpg" width="100%" style="width:100%">
+            <a
+              href="http://www.fablab.uchile.cl"
+              target="_blank"
+              style="width:100%"
+            >
+              <img
+                src="../assets/laterales/BL_5.jpg"
+                width="100%"
+                style="width:100%"
+              >
             </a>
           </div>
         </div>
 
         <div style="display:flex; flex-direction: column-reverse; margin: 0px; padding: 0px; border: 0">
           <div class="lateral_cuadros">
-            <a href=" https://www.fablabmaya.org" target="_blank" style="width:100%">
-              <img src="../assets/laterales/BL_6.jpg" width="100%" style="width:100%">
+            <a
+              href=" https://www.fablabmaya.org"
+              target="_blank"
+              style="width:100%"
+            >
+              <img
+                src="../assets/laterales/BL_6.jpg"
+                width="100%"
+                style="width:100%"
+              >
             </a>
           </div>
         </div>
@@ -175,8 +281,18 @@
           <p></p>
         </div>
 
-        <div class="social_botones_cuadro" style="width:100%; max-height:400px">
-          <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJDZTQ3bguPo4RYBvTODt8Nps&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo" allowfullscreen></iframe>
+        <div
+          class="social_botones_cuadro"
+          style="width:100%; max-height:400px"
+        >
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJDZTQ3bguPo4RYBvTODt8Nps&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo"
+            allowfullscreen
+          ></iframe>
         </div>
 
       </div>

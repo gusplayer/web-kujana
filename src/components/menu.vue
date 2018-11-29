@@ -2,69 +2,169 @@
   <div id="menuTop">
     <div class="logo">
       <router-link to="/">
-        <img class="logo_meta" src="../assets/logo_kujana.png" />
+        <img
+          class="logo_meta"
+          src="../assets/logo_kujana.png"
+        />
       </router-link>
       <!-- <img class="logo_colombia" src="../assets/colombia.png" /> -->
     </div>
     <nav class="go_menu">
       <ul class="go_menu_list">
-        <li class="go_menu_list_item" v-for="(item,index) in menuDefault" :key="`item${index}`">
+        <li
+          class="go_menu_list_item"
+          v-for="(item,index) in menuDefault"
+          :key="`item${index}`"
+        >
           <router-link :to="item.url">{{ item.titulo }}
-            <i class="el-icon-caret-bottom" v-show="item.haveChildren"></i>
+            <i
+              class="el-icon-caret-bottom"
+              v-show="item.haveChildren"
+            ></i>
           </router-link>
-          <ul class="go_menu_sublist" v-if="item.haveChildren">
-            <li class="go_menu_list_item" v-for="(subitem,index) in item.children" :key="`subitem${index}`">
+          <ul
+            class="go_menu_sublist"
+            v-if="item.haveChildren"
+          >
+            <li
+              class="go_menu_list_item"
+              v-for="(subitem,index) in item.children"
+              :key="`subitem${index}`"
+            >
               <router-link :to="subitem.url">{{ subitem.titulo }}
-                <i class="el-icon-caret-right" v-show="subitem.haveChildren"></i>
+                <i
+                  class="el-icon-caret-right"
+                  v-show="subitem.haveChildren"
+                ></i>
               </router-link>
-              <ul class="go_menu_sublist" v-if="subitem.haveChildren">
-                <li class="go_menu_list_item" v-if="subitem.children" v-for="(subitem2,index) in subitem.children" :key="`subitem2${index}`">
+              <ul
+                class="go_menu_sublist"
+                v-if="subitem.haveChildren"
+              >
+                <li
+                  class="go_menu_list_item"
+                  v-if="subitem.children"
+                  v-for="(subitem2,index) in subitem.children"
+                  :key="`subitem2${index}`"
+                >
                   <router-link :to="subitem2.url">{{ subitem2.titulo }}</router-link>
                 </li>
-                <li class="go_menu_list_item" v-if="subitem.childrenDynamic" v-for="(item,index) in filterMenu(subitem.id)" :key="`item2${index}`">
+                <li
+                  class="go_menu_list_item"
+                  v-if="subitem.childrenDynamic"
+                  v-for="(item,index) in filterMenu(subitem.id)"
+                  :key="`item2${index}`"
+                >
                   <router-link :to="`/micrositio/${item.id}`">{{ item.titulo }}</router-link>
                 </li>
               </ul>
             </li>
-            <li class="go_menu_list_item" v-if="item.childrenDynamic" v-for="(subitem,index) in filterMenu(item.id)" :key="`subitem1${index}`">
+            <li
+              class="go_menu_list_item"
+              v-if="item.childrenDynamic"
+              v-for="(subitem,index) in filterMenu(item.id)"
+              :key="`subitem1${index}`"
+            >
               <router-link :to="`/micrositio/${subitem.id}`">{{ subitem.titulo }}</router-link>
             </li>
           </ul>
         </li>
-        <li class="go_menu_list_item">
-          <a href="https://www.facebook.com/FabLabKujana/" target="_blank"><img src="../assets/facebook.svg" width="12px" style="color: blue"></a>
+        <li class="go_menu_list_item_link">
+          <a
+            href="https://www.facebook.com/FabLabKujana/"
+            target="_blank"
+          ><img
+              src="../assets/social/facebook.png"
+              width="25px"
+            ></a>
+        </li>
+        <li class="go_menu_list_item_link">
+          <a
+            href="https://www.instagram.com/fablabkujana/"
+            target="_blank"
+          ><img
+              src="../assets/social/Instagram.png"
+              width="25px"
+            ></a>
+        </li>
+        <li class="go_menu_list_item_link">
+          <a
+            href="https://twitter.com/FablabKujana"
+            target="_blank"
+          ><img
+              src="../assets/social/twitter.png"
+              width="25px"
+              style="color: blue"
+            ></a>
+        </li>
+        <li class="go_menu_list_item_link">
+          <a
+            href="https://www.youtube.com/channel/UC2049ju5b7Iy_P2lKLt8Fvg"
+            target="_blank"
+          ><img
+              src="../assets/social/youtube.png"
+              width="25px"
+            ></a>
         </li>
       </ul>
 
     </nav>
 
-    <!-- <a href="javascript:void(0);" class="icon" v-on:click="transition = !transition">&#9776;</a> -->
-
     <div>
 
       <transition name="el-zoom-in-top">
-        <div v-show="transition" class="menuresponsive">
-          <el-menu default-active="2" class="el-menu-vertical" v-show="transition">
+        <div
+          v-show="transition"
+          class="menuresponsive"
+        >
+          <el-menu
+            default-active="2"
+            class="el-menu-vertical"
+            v-show="transition"
+          >
             <template v-for="(item, index) in menuDefault">
-              <el-menu-item v-if="!item.haveChildren" :index="index.toString()">
+              <el-menu-item
+                v-if="!item.haveChildren"
+                :index="index.toString()"
+              >
                 <router-link :to="item.url">{{ item.titulo }}</router-link>
               </el-menu-item>
-              <el-submenu v-else :index="index.toString()">
+              <el-submenu
+                v-else
+                :index="index.toString()"
+              >
                 <span slot="title">
                   </i>{{ item.titulo }}</span>
                 <template v-for="(item2, index2) in item.children">
-                  <el-menu-item v-if="!item2.haveChildren" :index="`${index}-${index2}`">
+                  <el-menu-item
+                    v-if="!item2.haveChildren"
+                    :index="`${index}-${index2}`"
+                  >
                     <router-link :to="item2.url">{{ item2.titulo }}</router-link>
                   </el-menu-item>
-                  <el-submenu v-else :index="`${index}-${index2}`">
+                  <el-submenu
+                    v-else
+                    :index="`${index}-${index2}`"
+                  >
                     <span slot="title">{{ item2.titulo }}</span>
-                    <el-menu-item v-for="(item3, index3) in item2.children" :index="`${index}-${index2}-${index3}`">{{ item3.titulo }}</el-menu-item>
-                    <el-menu-item v-if="item2.childrenDynamic" v-for="(item3, index3) in filterMenu(item2.id)" :index="`${index}-${index2}-${index3}`">
+                    <el-menu-item
+                      v-for="(item3, index3) in item2.children"
+                      :index="`${index}-${index2}-${index3}`"
+                    >{{ item3.titulo }}</el-menu-item>
+                    <el-menu-item
+                      v-if="item2.childrenDynamic"
+                      v-for="(item3, index3) in filterMenu(item2.id)"
+                      :index="`${index}-${index2}-${index3}`"
+                    >
                       <router-link to="/contacto">{{ item3.titulo }}</router-link>
                     </el-menu-item>
                   </el-submenu>
                 </template>
-                <el-menu-item v-if="item.childrenDynamic" v-for="(item2, index2) in filterMenu(item.id)" :index="`${index}-${index2}`">
+                <el-menu-item
+                  v-if="item.childrenDynamic"
+                  v-for="(item2, index2) in filterMenu(item.id)"
+                  :index="`${index}-${index2}`"
+                >
                   <router-link :to="item2.url">{{ item2.titulo }}</router-link>
                 </el-menu-item>
               </el-submenu>
@@ -80,7 +180,10 @@
 </transition> -->
 
     <transition name="fade">
-      <el-button class="icon2" @click="transition = !transition">&#9776; Menu</el-button>
+      <el-button
+        class="icon2"
+        @click="transition = !transition"
+      >&#9776; Menu</el-button>
     </transition>
 
     <!-- <img class="search_icon" src="../assets/search.png" height="20px"/> -->
@@ -93,7 +196,7 @@ import axios from "axios";
 export default {
   created() {
     axios
-      .get("https://intranet.meta.gov.co/api/micrositio/listado")
+      .get("https://panel.fablabkujana.com/api/micrositio/listado")
       .then(response => {
         this.menuDynamic = response.data.data;
       });
@@ -111,13 +214,14 @@ export default {
           url: "/"
         },
         {
+          id: "1",
           titulo: "Quiénes somos",
           haveChildren: false,
           childrenDynamic: false,
-          url: "/"
+          url: "/micrositio/112"
         },
         {
-          id: "10",
+          id: "2",
           titulo: "Experiencia",
           haveChildren: true,
           childrenDynamic: true,
@@ -128,28 +232,28 @@ export default {
               haveChildren: false,
               childrenDynamic: false,
               url: "/"
-            },
-            {
-              titulo: "Kujana - Itinerante",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/"
             }
+            // {
+            //   titulo: "Kujana - Itinerante",
+            //   haveChildren: false,
+            //   childrenDynamic: false,
+            //   url: "/micrositio/114"
+            // }
           ]
         },
         {
-          id: "8",
+          id: "3",
           titulo: "Noticias",
           haveChildren: false,
           childrenDynamic: false,
           url: "/prensa"
         },
         {
-          id: "6",
+          id: "4",
           titulo: "Contáctanos",
           haveChildren: false,
           childrenDynamic: false,
-          url: "/"
+          url: "/micrositio/115"
         }
       ],
       menuDynamic: []
@@ -171,13 +275,12 @@ export default {
 <style scoped>
 #menuTop {
   width: 100%;
-  /* height: 80px; */
   top: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  z-index: 11;
+  z-index: 111;
 }
 .go_menu * {
   list-style: none;
@@ -186,10 +289,13 @@ export default {
 }
 .go_menu {
   margin: 0px 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
 }
 .go_menu_list {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .go_menu_list > .go_menu_list_item {
   border-bottom: 5px solid transparent;
@@ -203,6 +309,32 @@ export default {
 }
 .go_menu_list_item a {
   padding: 20px 18px;
+}
+
+.go_menu_list {
+  display: flex;
+  align-items: center;
+}
+.go_menu_list > .go_menu_list_item {
+  border-bottom: 5px solid transparent;
+}
+.go_menu_list > .go_menu_list_item:hover {
+  border-bottom: 5px solid #20a0ff;
+}
+.go_menu_list_item {
+  display: flex;
+}
+.go_menu_list_item a {
+  padding: 20px 15px;
+}
+.go_menu_list_item_link {
+  display: flex;
+  margin-left: 20px;
+  margin-top: -5px;
+}
+.go_menu_list_item_link a {
+  padding: 20px 0px;
+  padding-left: 5px;
 }
 .go_menu_list_item i {
   margin-left: 5px;

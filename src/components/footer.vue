@@ -29,49 +29,62 @@
             </router-link>
           </div>
           <div class="footer_ayuda">
-            <h5>Ayuda</h5>
-            <router-link to="/contacto">
-              <p>Contacto</p>
-            </router-link>
-            <router-link to="/soporte">
-              <p>Soporte</p>
-            </router-link>
-            <!-- <router-link to="/prensa">
-              <p>Noticias</p>
-            </router-link> -->
+            <h5>Social Media</h5>
+            <div class="footer_siguenos_icons">
+              <a
+                href="https://www.facebook.com/FabLabKujana"
+                target="_blank"
+              ><img
+                  src="../assets/social/facebook.png"
+                  width="32px"
+                >Facebook</a>
+              <a
+                href="https://twitter.com/FablabKujana"
+                target="_blank"
+              ><img
+                  src="../assets/social/twitter.png"
+                  width="32px"
+                >Twitter</a>
+              <a
+                href="https://www.instagram.com/fablabkujana/"
+                target="_blank"
+              ><img
+                  src="../assets/social/Instagram.png"
+                  width="32px"
+                >Instagram</a>
+              <a
+                href="https://www.youtube.com/channel/UC2049ju5b7Iy_P2lKLt8Fvg"
+                target="_blank"
+              ><img
+                  src="../assets/social/youtube.png"
+                  width="32px"
+                >Youtube</a>
+            </div>
           </div>
           <div class="footer_popular">
             <h5>Accesibilidad</h5>
             <router-link to="/sitemap">
               <p>Mapa de sitio</p>
             </router-link>
-            <router-link to="/">
-              <p>English version</p>
-            </router-link>
+
           </div>
           <div class="footer_contacto">
             <h5>Horarios</h5>
             <!-- <span class="footer_mail">oficinaatencionalciudadano@meta.gov.co</span>
              <span class="footer_mail">notificacionesjudiciales@meta.gov.co</span> -->
             <span class="footer_direccion">
-              - Entrada a visitantes lunes a viernes en días hábiles laborales de 8:00 am a 11.30 am y 2:00 pm a 5:30 pm.
+              Lunes a viernes <br><br>
+              8:00 AM a 11:30 AM <br> 14:00 PM a 16:30 PM
               <br>
-              - Oficina de atención al ciudadano lunes a viernes en días hábiles laborales 8 am a 12 m y 2 pm a 6 pm
-              <br><br>
-              - Oficina de Pasaportes lunes a viernes en días hábiles laborales de 7 am a 4 pm jornada continua
-              <br><br>
-              - Radicación de correspondencia lunes a viernes en días hábiles laborales 8 am a 11.30 am y 2 a 5:30 pm
+
             </span>
           </div>
           <div class="footer_siguenos">
-            <h5>Siguenos</h5>
-            <div class="footer_siguenos_icons">
-              <a href="https://www.facebook.com/FabLabKujana//" target="_blank"><img src="../assets/facebook.svg">FabLabKujana</a>
-              <!-- <a href="https://twitter.com/marcela_amayag" target="_blank"><img src="../assets/twitter.svg"></a> -->
-            </div>
-            <span class="footer_siguenos_pbx">PBX: (+57) 8 681 85 00 | Línea Gratuita: 01 8000 129 202
+            <h5>Contacto</h5>
+
+            <span class="footer_siguenos_pbx">contactanos@fablabkujana.com
               <br><br>
-              Dirección: Carrera 33 N° 38-45 Plaza Libertadores - Centro, Ed Gobernación
+              Dirección: Dirección Pueblito Llanero , Parque Las Malocas -Catama
               <br><br>Villavicencio, Colombia.</span>
 
           </div>
@@ -84,15 +97,30 @@
 
       <div class="dark">
         <div class="light">
-          <img class="light_img_foster" src="../assets/foster.png" height="55px">
-          <img class="light_img_lacharme" src="../assets/lacharme.png" height="26px">
-          <img class="light_img_parque" src="../assets/parque.png" height="38px">
+          <img
+            class="light_img_foster"
+            src="../assets/foster.png"
+            height="55px"
+          >
+          <img
+            class="light_img_lacharme"
+            src="../assets/lacharme.png"
+            height="26px"
+          >
+          <img
+            class="light_img_parque"
+            src="../assets/parque.png"
+            height="38px"
+          >
         </div>
 
         <div class="light copyright">
 
           <p>Desarrollado por
-            <a href="http://fosterapps.com/" target="_blank">
+            <a
+              href="http://fosterapps.com/"
+              target="_blank"
+            >
               FosterApps.com
             </a>
           </p>
@@ -206,11 +234,17 @@ export default {
   width: 250px;
 }
 .footer_siguenos_icons {
-  width: 60%;
+  width: 80%;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   margin-bottom: 52px;
-  margin-top: 20px;
+  margin-top: 0px;
+}
+.footer_siguenos_icons a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .footer_siguenos_icons img {
   margin-right: 20px;

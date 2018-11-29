@@ -8,7 +8,7 @@ import locale from 'element-ui/lib/locale/lang/es'
 import VueAnalytics from 'vue-analytics'
 
 Vue.use(ElementUI, { locale })
-Vue.use(VueAnalytics, { id: 'UA-98864338-1', router })
+Vue.use(VueAnalytics, { id: 'UA-129882313-1', router })
 Vue.config.productionTip = false
 
 new Vue({

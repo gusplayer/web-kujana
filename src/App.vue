@@ -3,6 +3,8 @@
     <div id="fb-root"></div>
     <div class="general">
       <PopUp></PopUp>
+      <!-- <PopUpNews></PopUpNews> -->
+
       <!-- <menu-top ></menu-top> -->
 
       <div class="contenedor">
@@ -22,9 +24,10 @@ import menuTop from "./components/menu_top.vue";
 import footerWeb from "./components/footer.vue";
 import menuPrincipal from "./components/menu.vue";
 import PopUp from "./components/popup.vue";
+import PopUpNews from "./components/popupnews.vue";
 
 export default {
-  components: { menuTop, footerWeb, menuPrincipal, PopUp }
+  components: { menuTop, footerWeb, menuPrincipal, PopUp, PopUpNews }
 };
 </script>
 
