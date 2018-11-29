@@ -23,10 +23,118 @@
       class="botones_banner"
       v-loading="loading"
     >
-      <a class="botones_banner_movil">
+      <!-- <a class="botones_banner_movil">
         <img src="../assets/botones/b1.png">
-      </a>
-      <a class="botones_banner_movil">
+      </a> -->
+      <el-popover
+        placement="top-start"
+        width="500"
+        trigger="click"
+        class="botones_banner_movil"
+      >
+        <div style="background-color: #EEEEEE; padding: 15px">
+          <h2>Ideación</h2>
+          <br>
+          <p>Desde Fab Lab Kujana orientamos la fase de Ideación a una simple pregunta, <br><br><b>¿Cómo se genera una idea?</b> <br><br>A través de la experiencia previa de los participantes y la identificación de problemas sociales, buscamos crear soluciones innovadoras a través de las herramientas de la Ciudadela del Saber y el emprendimiento TIC.
+            Integramos diversas áreas de conocimiento para reconocer oportunidades de negocio, creando y formando ideas enfocadas en mercados y clientes específicos hasta llegar a la resolución de un problema.
+          </p>
+          <br>
+          <img
+            src="../assets/botones/b1.png"
+            width="100%"
+          >
+        </div>
+        <el-button
+          style="padding: 0px; border-radius: 0px"
+          slot="reference"
+        >
+          <img src="../assets/botones/b1.png">
+        </el-button>
+      </el-popover>
+
+      <el-popover
+        placement="top-start"
+        width="500"
+        trigger="click"
+        class="botones_banner_movil"
+      >
+        <div style="background-color: #EEEEEE; padding: 15px">
+          <h2>Diseño</h2>
+          <br>
+          <p>La apropiación social de ciencia, tecnología e innovación (ASCTI), es una estrategia indispensable para que podamos reducir brechas sociales en el departamento del Meta, es por ello que la secretaría de TIC, ciencia y tecnología, propende por implementar procesos innovadores, científicos y tecnológicos en las aulas, construyendo y diseñando proyectos mediante el uso de las herramientas y metodologías de FabLab Kujana.
+            <br><br>
+            El diseño va más allá de las dimensiones, el aspecto, la forma y el color, también se analiza su funcionalidad, la utilidad, la operatividad, la eficiencia y su interacción con el usuario, permitiendo validar hipótesis, pero principalmente facilitando que la comunidad educativa, afiance conocimientos, resiliencia y capacidad para mejorar constantemente.
+
+          </p>
+          <br>
+          <img
+            src="../assets/botones/b2.png"
+            width="100%"
+          >
+        </div>
+        <el-button
+          style="padding: 0px; border-radius: 0px"
+          slot="reference"
+        >
+          <img src="../assets/botones/b2.png">
+        </el-button>
+      </el-popover>
+
+      <el-popover
+        placement="top-start"
+        width="500"
+        trigger="click"
+        class="botones_banner_movil"
+      >
+        <div style="background-color: #EEEEEE; padding: 15px">
+          <h2>Prototipado</h2>
+          <br>
+          <p>Prototipar hace referencia a la acción y al proceso de creación de un modelo y las posteriores pruebas del producto. Esta actividad se centra en el uso de herramientas tecnológicas para proyectar soluciones a través de mecanismos que permitan validar e indicar el potencial del proyecto innovador.
+            <br><br>
+            En esta etapa se genera un acercamiento al desarrollo de soluciones de forma práctica y lúdica, aprovechando herramientas de impresión 3D, el desarrollo de software, aplicaciones web y móviles, facilitando el desarrollo de competencias de validación de las diversas variables que influyen en una solución final y su aceptación por usuarios y clientes.
+
+          </p>
+          <br>
+          <img
+            src="../assets/botones/b3.png"
+            width="100%"
+          >
+        </div>
+        <el-button
+          style="padding: 0px; border-radius: 0px"
+          slot="reference"
+        >
+          <img src="../assets/botones/b3.png">
+        </el-button>
+      </el-popover>
+
+      <el-popover
+        placement="top-start"
+        width="500"
+        trigger="click"
+        class="botones_banner_movil"
+      >
+        <div style="background-color: #EEEEEE; padding: 15px">
+          <h2>Socialización</h2>
+          <br>
+          <p>Los participantes validan los prototipos, realizan un pitch y presentan una solución a los problemas sociales a través del uso de la ciencia, la tecnología y la innovación.
+            Además de divulgar los resultados y presentar los productos, se expone la recopilación gráfica que evidencia el trabajo realizado en las anteriores fases de Ideación, Diseño y Prototipado, con el objetivo de compartir experiencias y conocimientos.
+
+          </p>
+          <br>
+          <img
+            src="../assets/botones/b4.png"
+            width="100%"
+          >
+        </div>
+        <el-button
+          style="padding: 0px; border-radius: 0px"
+          slot="reference"
+        >
+          <img src="../assets/botones/b4.png">
+        </el-button>
+      </el-popover>
+      <!-- <a class="botones_banner_movil">
         <img src="../assets/botones/b2.png">
       </a>
       <a class="botones_banner_movil">
@@ -34,7 +142,7 @@
       </a>
       <a class="botones_banner_movil">
         <img src="../assets/botones/b4.png">
-      </a>
+      </a> -->
     </div>
 
     <div class="botones_banner_responsive">
@@ -68,18 +176,26 @@
 
           <!-- <div class="noticias_contenedor_foto" v-if="noticia.imagenes[0]" :style="coverImagen(noticia)">
           </div> -->
-          <div
-            class="noticias_contenedor_foto"
-            v-if="noticia.imagenes[0]"
-            :style="coverImagen(noticia)"
-          >
+          <div class="card-contenedor-imagen-web">
+            <img
+              v-if="noticia.imagenes[0]"
+              :src="`https://panel.fablabkujana.com/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`"
+              class="card-image-web"
+            >
+            <img
+              v-else
+              src="../assets/sinimagen.jpg"
+              class="card-image-web"
+            >
           </div>
-          <div
-            class="noticias_contenedor_foto"
+
+          <!-- <div
+            class="
+            noticias_contenedor_foto"
             v-else
             :style="setStyle"
           >
-          </div>
+          </div> -->
 
           <div class="noticias_contenedor_texto">
             <h2>{{ noticia.titulo }}</h2>
@@ -109,7 +225,7 @@
         <div class="card">
           <el-col
             :span="8"
-            v-for="noticia in noticias.slice(0, 5)"
+            v-for="noticia in noticias.slice(0, 6)"
             :key="noticia.key"
             class="card-col"
           >
@@ -375,7 +491,8 @@ export default {
       errors: [],
       cantidadNoticias: "",
       loading: true,
-      loadingNoticias: true
+      loadingNoticias: true,
+      ideacion: "Algo de ideacion"
     };
   },
   methods: {
@@ -392,7 +509,7 @@ export default {
     },
     coverImagen(value) {
       if (value.imagenes[0])
-        return `background-image:url('${
+        return `background-image:url('https://panel.fablabkujana.com/imagen_timeline/${
           value.imagenes[0].nombre_imagen
         }'); background-size:cover`;
     },
@@ -489,9 +606,8 @@ export default {
   /* height: 128px; */
   display: flex;
   flex: 1;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #9b9b9b;
+  background-color: #f8f8f8;
+  border-color: #f1f1f1;
   box-shadow: 0 1px 4px 0 rgba(164, 160, 160, 0.9);
   margin: 5px;
 }
@@ -500,7 +616,7 @@ export default {
 }
 .botones_banner_movil:hover {
   transform: scale(1.03);
-  filter: saturate(1.5);
+  filter: grayscale(1);
 }
 .botones_banner_regalias {
   background-color: #f5f5f5;
@@ -598,6 +714,18 @@ export default {
 
 .card {
   display: none;
+}
+
+.card-contenedor-imagen-web {
+  overflow: hidden;
+  height: 170px;
+  width: 450px;
+  height: auto;
+  padding: 0px;
+}
+.card-image-web {
+  overflow: hidden;
+  height: 100%;
 }
 .lateral {
   max-width: 384.1px;

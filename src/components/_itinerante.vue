@@ -9,6 +9,7 @@
 
     <div class="contenido">
       <div class="texto">
+        <h1>Kujana: Itinerante</h1><br><br>
         <p>
           Los medios disponibles de atención y participación que tienen los ciudadanos para presentar Peticiones, Quejas , Reclamos, Sugerencias y Denuncias, son:<br><br>
 
@@ -22,16 +23,6 @@
         </p>
       </div>
 
-      <div class="google_maps">
-        <iframe
-          width="100%"
-          height="400px"
-          frameborder="0"
-          style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJDZTQ3bguPo4RYBvTODt8Nps&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo"
-          allowfullscreen
-        ></iframe>
-      </div>
     </div>
 
   </div>
@@ -47,8 +38,8 @@ export default {
   name: "app",
   data() {
     return {
-      texto: "Buzón de contacto",
-      imagenBanner: require("../assets/banners/contacto.jpg")
+      texto: "Kujana Itinerante",
+      imagenBanner: require("../assets/banners/kujanitos.png")
     };
   }
 };
@@ -89,6 +80,7 @@ h3 {
 }
 .texto {
   display: flex;
+  flex-direction: column;
   flex: 1;
   min-width: 400px;
   box-shadow: 0 0 10px 0 rgba(94, 92, 92, 0.22);

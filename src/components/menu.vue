@@ -218,27 +218,27 @@ export default {
           titulo: "Quiénes somos",
           haveChildren: false,
           childrenDynamic: false,
-          url: "/micrositio/112"
+          url: "/about"
         },
         {
           id: "2",
           titulo: "Experiencia",
           haveChildren: true,
-          childrenDynamic: true,
+          childrenDynamic: false,
           url: "/",
           children: [
             {
               titulo: "Kujana - Pueblito llanero",
               haveChildren: false,
               childrenDynamic: false,
-              url: "/"
+              url: "/pueblito"
+            },
+            {
+              titulo: "Kujana - Itinerante",
+              haveChildren: false,
+              childrenDynamic: false,
+              url: "/itinerante"
             }
-            // {
-            //   titulo: "Kujana - Itinerante",
-            //   haveChildren: false,
-            //   childrenDynamic: false,
-            //   url: "/micrositio/114"
-            // }
           ]
         },
         {
@@ -253,7 +253,7 @@ export default {
           titulo: "Contáctanos",
           haveChildren: false,
           childrenDynamic: false,
-          url: "/micrositio/115"
+          url: "/contacto"
         }
       ],
       menuDynamic: []

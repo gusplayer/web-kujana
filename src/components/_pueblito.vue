@@ -47,8 +47,8 @@ export default {
   name: "app",
   data() {
     return {
-      texto: "Buzón de contacto",
-      imagenBanner: require("../assets/banners/contacto.jpg")
+      texto: "Kujana: Pueblito llanero",
+      imagenBanner: require("../assets/banners/pueblito.jpg")
     };
   }
 };
