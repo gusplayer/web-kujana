@@ -28,11 +28,14 @@
       </a> -->
       <el-popover
         placement="top-start"
-        width="500"
+        width="350"
         trigger="click"
         class="botones_banner_movil"
       >
-        <div style="background-color: #EEEEEE; padding: 15px">
+        <div
+          class="popover"
+          style="background-color: #EEEEEE; padding: 15px"
+        >
           <h2>Ideación</h2>
           <br>
           <p>Desde Fab Lab Kujana orientamos la fase de Ideación a una simple pregunta, <br><br><b>¿Cómo se genera una idea?</b> <br><br>A través de la experiencia previa de los participantes y la identificación de problemas sociales, buscamos crear soluciones innovadoras a través de las herramientas de la Ciudadela del Saber y el emprendimiento TIC.
@@ -54,7 +57,7 @@
 
       <el-popover
         placement="top-start"
-        width="500"
+        width="350"
         trigger="click"
         class="botones_banner_movil"
       >
@@ -82,7 +85,7 @@
 
       <el-popover
         placement="top-start"
-        width="500"
+        width="350"
         trigger="click"
         class="botones_banner_movil"
       >
@@ -110,7 +113,7 @@
 
       <el-popover
         placement="top-start"
-        width="500"
+        width="350"
         trigger="click"
         class="botones_banner_movil"
       >
@@ -711,7 +714,9 @@ export default {
   	font-weight: 500;
   	color: #128f2e;
 }*/
-
+.popover {
+  width: 100%;
+}
 .card {
   display: none;
 }
