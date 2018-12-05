@@ -9,28 +9,14 @@
 
     <div class="contenido">
       <div class="texto">
+        <h1>Pueblito Llanero</h1>
+        <br>
         <p>
-          Los medios disponibles de atención y participación que tienen los ciudadanos para presentar Peticiones, Quejas , Reclamos, Sugerencias y Denuncias, son:<br><br>
+          La experiencia Fab Lab Kujana dentro del Pueblito Llanero busca acercar a sus visitantes a distintos proyectos de innovación, desarrollados de primera mano por el equipo de profesionales que conforma el FabLab.
+          La maloca está equipada con herramientas tecnológicas pensadas para el reconocimiento de problemas, como también el desarrollo de sus posibles soluciones, utilizando los conocimientos desde diferentes áreas de ingeniería y marketing.<br><br>
 
-          <b>HORARIO DE ATENCIÓN AL PÚBLICO:</b> De lunes a viernes en días hábiles laborales de 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.
-          <br><br>
-
-          <b>PORTAL WEB INSTITUCIONAL:</b> www.fablabkujana.com
-          <br><br>
-
-          <b>CORREO ELECTRÓNICO INSTITUCIONAL:</b> contactanos@fablabkujana.com
+          Nuevamente la innovación, la ciencia y la tecnología son foco de aprendizaje para los niños, niñas y jóvenes que participan de esta experiencia, siendo partícipes de la mesa de Ideación y conociendo de igual manera los prototipos y productos desarrollados.
         </p>
-      </div>
-
-      <div class="google_maps">
-        <iframe
-          width="100%"
-          height="400px"
-          frameborder="0"
-          style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJDZTQ3bguPo4RYBvTODt8Nps&key=AIzaSyBocvLGZd1i7uxy95idGFnPq1FJsrGFrWo"
-          allowfullscreen
-        ></iframe>
       </div>
     </div>
 
@@ -47,7 +33,7 @@ export default {
   name: "app",
   data() {
     return {
-      texto: "Kujana: Pueblito llanero",
+      texto: "Kujana",
       imagenBanner: require("../assets/banners/pueblito.jpg")
     };
   }
@@ -89,6 +75,7 @@ h3 {
 }
 .texto {
   display: flex;
+  flex-direction: column;
   flex: 1;
   min-width: 400px;
   box-shadow: 0 0 10px 0 rgba(94, 92, 92, 0.22);

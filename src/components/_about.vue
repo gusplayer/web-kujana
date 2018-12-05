@@ -11,30 +11,9 @@
       <div class="texto">
         <h1>¿Quiénes somos?</h1><br> <br>
         <p>
-          Un Fab Lab (acrónimo del inglés Fabrication Laboratory) es un espacio de producción de objetos físicos a escala personal o local que agrupa máquinas controladas por ordenadores, capaces de fabricar casi cualquier cosa que imaginemos. Su particularidad reside en su tamaño y en su fuerte vinculación con la sociedad.
-          <br><br>
-          Los fablabs se mueven alrededor de dos movimientos sociotecnológicos, el DIY (do it yourself) o la autoproducción y el open source o el libre flujo de información y conocimiento.
-          <br><br>
-          Red Fab Lab
-          El concepto de Fab Lab aparece en el seno del Media Lab en el MIT (Massachussets Institute of Technology). Esto ocurre a principios del siglo XXI, cuando en 2001 el CBA (Center for Bits and Atoms) recibe una subvención de la NSF (National Science Foundation) para establecer unas instalaciones únicas de fabricación digital transversales a varias disciplinas. Así se adquieren máquinas capaces de “construirlo casi todo”. Su director Neil A. Gershenfeld justifica esa financiación “haciendo lo que se hacía en el MIT, en lugar de solamente hablar de ello”. En 2002, surgen los primeros Fab Labs en India, Costa Rica, Noruega, Boston y Ghana, como unidades de producción a escala local.
-          <br><br>
-          Fab Lab 'Charter'
-          Según la Fab Foundation, un Fab Lab se basa en 8 puntos clave. Estos se agrupan en su definición: misión, acceso y educación. Y la responsabilidad de los usuarios: seguridad, limpieza, operaciones, confidencialidad y negocio.
-          <br><br>
-          La misión de los fablabs es ser una red global de laboratorios locales que favorecen la creatividad proporcionando a los individuos el acceso herramientas de fabricación digital.
-          <br><br>
-          El acceso debe ser universal, permitiendo utilizar las herramientas para la fabricación de casi cualquier cosa siempre y cuando no haga daño a nadie. Sin embargo, se promueve el autoaprendizaje y la compartición, así el usuario debe aprender por si solo y debe compartir el uso del laboratorio con otros usuarios.
-          <br><br>
-          La educación se centra en que la enseñanza en un fablab se desarrolla sobre proyectos en progreso y el aprendizaje entre pares. Por lo tanto se insta a que los usuarios contribuyan a la documentación y la instrucción.
-          <br><br>
-          Al trabajar con máquinas es importante la seguridad, por lo tanto es responsabilidad de los usuarios saber trabajar sin hacer daño a las personas ni a las máquinas.
-          <br><br>
-          La limpieza de este espacio compartido también es responsabilidad de los usuarios, así se hace una llamamiento a dejar el laboratorio más limpio aún que antes de usarlo.
-          <br><br>
-          Las operaciones con el material del laboratorio es otro punto a tener en cuenta, esto hace que los usuarios sean responsables de contribuir al mantenimiento, la reparación y el seguimiento de las herramientas, las necesidades y los incidentes.
-          La confidencialidad, aunque la propiedad intelectual pueda ser protegida los diseños y procesos desarrollados en los fablabs deben quedar accesibles al uso individual.
-          <br><br>
-          Las actividades comerciales pueden ser incubadas en los fablabs pero no pueden entrar en conflicto con el acceso abierto. Deberían crecer más allá del laboratorio en lugar de dentro, se espera que esos negocios beneficien a los inventores, laboratorios y redes que han contribuido a su éxito.
+          El laboratorio de fabricación FabLab es un espacio de innovación digital, cuenta con una serie de máquinas para la experimentación, prototipado y manufactura.<br><br>
+          El FabLab está abierto para diferentes disciplinas y/o carreras, es un espacio para creadores, inventores, artistas y personas creativas que estén dispuestas a compartir sus habilidades y experiencias que contribuyan a resolver problemas tanto locales como globales enfocados en la la ciencia, tecnología e innovación unidos por un tejido de red colaborativa.
+          En el FabLab Kujana constituye un espacio para que los estudiantes de la región del Meta puedan experimentar y tener un acercamiento a la ciencia, tecnología e innovación.
 
         </p>
       </div>

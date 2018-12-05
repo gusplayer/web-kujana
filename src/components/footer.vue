@@ -25,7 +25,7 @@
               <p>Condiciones de uso</p>
             </router-link>
             <router-link to="/privacidad">
-              <p>Privacidad de datos</p>
+              <p>Políticas de privacidad</p>
             </router-link>
           </div>
           <div class="footer_ayuda">

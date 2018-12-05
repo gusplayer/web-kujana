@@ -9,17 +9,12 @@
 
     <div class="contenido">
       <div class="texto">
-        <h1>Kujana: Itinerante</h1><br><br>
+        <h1>Itinerante</h1><br><br>
         <p>
-          Los medios disponibles de atención y participación que tienen los ciudadanos para presentar Peticiones, Quejas , Reclamos, Sugerencias y Denuncias, son:<br><br>
-
-          <b>HORARIO DE ATENCIÓN AL PÚBLICO:</b> De lunes a viernes en días hábiles laborales de 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.
+          Nuestra meta es llevar a las aulas de clase la innovación, la ciencia y la tecnología. Buscamos presentar de manera organizada a niños, niñas y jovenes de diferentes instituciones educativas en toda la región, la manera de entrar en contacto con la tecnología, promoviendo lo busqueda de soluciones a problemáticas sociales desde la tarea más básica como lo es generar una idea.
           <br><br>
 
-          <b>PORTAL WEB INSTITUCIONAL:</b> www.fablabkujana.com
-          <br><br>
-
-          <b>CORREO ELECTRÓNICO INSTITUCIONAL:</b> contactanos@fablabkujana.com
+          A través de herramientas relacionadas al desarrollo de software, la impresión 3D y el diseño digital, las aulas de clase se ven beneficiadas con el sistema de aprendizaje de Fab Lab Kujana. Creando una interacción dinámica por estaciones de Ideación, Diseño, Prototipado y Socialización
         </p>
       </div>
 
@@ -38,7 +33,7 @@ export default {
   name: "app",
   data() {
     return {
-      texto: "Kujana Itinerante",
+      texto: "Kujana ",
       imagenBanner: require("../assets/banners/kujanitos.png")
     };
   }
