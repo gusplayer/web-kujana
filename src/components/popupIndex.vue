@@ -1,5 +1,4 @@
 <template>
-
   <transition name="fade">
     <div
       class="pop-up"
@@ -7,14 +6,13 @@
     >
       <div class="
       pop-up-image">
-        <img src="https://assets.materialup.com/uploads/66ad59af-c67d-4e74-9d03-d37d0bf49ede/attachment.png">
+        <img src="../assets/popup-redes.png">
       </div>
 
       <br>
       <el-button v-on:click="visiblePopUp">Continuar</el-button>
     </div>
   </transition>
-
 </template>
 
 <script>

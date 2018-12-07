@@ -3,8 +3,6 @@ import Router from "vue-router";
 import Inicio from "@/components/_inicio";
 import Meta from "@/components/_meta";
 import Galeria from "@/components/_galeria";
-import Entidad from "@/components/_entidad";
-import Atencion from "@/components/_atencion";
 import Prensa from "@/components/_prensa";
 import Transparencia from "@/components/_transparencia";
 import Soporte from "@/components/_soporte";
@@ -17,16 +15,12 @@ import About from "@/components/_about";
 import Pueblito from "@/components/_pueblito";
 import Itinerante from "@/components/_itinerante";
 import Micrositio from "@/components/_micrositio";
-import Gobernadora from "@/components/_gobernadora";
 import Documentacion from "@/components/_centroDocumentacion";
-import Calidad from "@/components/_gestionCalidad";
 import Redirect from "@/components/_redirect";
 import NoticiaDetalle from "@/components/_noticiaDetalle";
-import Convocatorias from "@/components/_convocatorias";
-import CategoriasConvocatorias from "@/components/_categoriasConvocatorias";
-import ListadoConvocatorias from "@/components/_listadoConvocatorias";
-import DetallesConvocatorias from "@/components/_detallesConvocatorias";
 import Buscador from "@/components/_buscador";
+import Formulario from "@/components/_formulario";
+
 Vue.use(Router);
 
 export default new Router({
@@ -106,6 +100,11 @@ export default new Router({
       component: Sitemap
     },
     {
+      path: "/formulario",
+      name: "formulario",
+      component: Formulario
+    },
+    {
       path: "/itinerante",
       name: "itinerante",
       component: Itinerante
@@ -124,45 +123,6 @@ export default new Router({
       path: "/micrositio/:id",
       name: "micrositio",
       component: Micrositio
-    },
-    {
-      path: "/entidad/gobernadora",
-      name: "Entidad / Gobernadora",
-      component: Gobernadora
-    },
-    {
-      path: "/documentacion/documentos",
-      name: "documentación / Centro de documentación",
-      component: Documentacion
-    },
-    {
-      path: "/documentacion/convocatorias",
-      component: Convocatorias,
-      children: [
-        {
-          path: "/",
-          component: CategoriasConvocatorias,
-          name: CategoriasConvocatorias
-        },
-        {
-          path: "listado/:id",
-          component: ListadoConvocatorias
-        },
-        {
-          path: "detalles/:id",
-          component: DetallesConvocatorias
-        }
-      ]
-    },
-    // {
-    //   path: '/documentacion/convocatorias/listado',
-    //   name: 'listadoConvocatorias',
-    //   component: ListadoConvocatorias
-    // },
-    {
-      path: "/documentacion/calidad",
-      name: "calidad",
-      component: Calidad
     },
     {
       path: "/redirect",

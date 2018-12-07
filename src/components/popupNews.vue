@@ -5,9 +5,14 @@
       class="pop-up"
       v-show="imagen"
     >
-      <div class="
-      pop-up-image">
-        <img src="https://assets.materialup.com/uploads/66ad59af-c67d-4e74-9d03-d37d0bf49ede/attachment.png">
+      <div>
+        <a
+          href="https://www.facebook.com/FabLabKujana"
+          class="pop-up-image"
+          target="_blank"
+        >
+          <img src="../assets/popup-redes.png">
+        </a>
       </div>
 
       <br>

@@ -177,9 +177,13 @@
           :key="noticia.idTimeline"
         >
 
-          <!-- <div class="noticias_contenedor_foto" v-if="noticia.imagenes[0]" :style="coverImagen(noticia)">
-          </div> -->
-          <div class="card-contenedor-imagen-web">
+          <div
+            class="noticias_contenedor_foto"
+            v-if="noticia.imagenes[0]"
+            :style="coverImagen(noticia)"
+          >
+          </div>
+          <!-- <div class="card-contenedor-imagen-web">
             <img
               v-if="noticia.imagenes[0]"
               :src="`https://panel.fablabkujana.com/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`"
@@ -190,7 +194,7 @@
               src="../assets/sinimagen.jpg"
               class="card-image-web"
             >
-          </div>
+          </div> -->
 
           <!-- <div
             class="

@@ -21,11 +21,11 @@
         <div class="footer_content">
           <div class="footer_politicas">
             <h5>Politicas</h5>
-            <router-link to="/condiciones">
+            <!-- <router-link to="/condiciones">
               <p>Condiciones de uso</p>
-            </router-link>
+            </router-link> -->
             <router-link to="/privacidad">
-              <p>Políticas de privacidad</p>
+              <p>Políticas de privacidad y condiciones de uso</p>
             </router-link>
           </div>
           <div class="footer_ayuda">

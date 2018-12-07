@@ -244,9 +244,17 @@ export default {
         {
           id: "3",
           titulo: "Noticias",
-          haveChildren: false,
-          childrenDynamic: false,
-          url: "/prensa"
+          haveChildren: true,
+          childrenDynamic: true,
+          url: "/prensa",
+          children: [
+            {
+              titulo: "Regístrate a noticias",
+              haveChildren: false,
+              childrenDynamic: false,
+              url: "/formulario"
+            }
+          ]
         },
         {
           id: "4",
