@@ -19,7 +19,6 @@
       <h2>{{noticias.titulo}}</h2><br>
       <p v-html="noticias.contenido"></p>
       <br>
-
       <div class="" v-html="noticias.soundcloud" width="100%" style="width:100%">
 
       </div>
@@ -101,6 +100,7 @@ export default {
     width: calc(100% + 20px);
   }
   .noticia p {
+    width: 100%;
     font-size: 11pt;
   }
   .noticia h2 {

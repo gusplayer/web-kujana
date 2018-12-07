@@ -1,5 +1,7 @@
 <template>
   <div class="general">
+    <PopUpNews></PopUpNews>
+
     <br>
     <div
       class="banner"
@@ -447,10 +449,12 @@
 
 <script>
 import bannerTop from "./banner.vue";
+import PopUpNews from "./popupnews.vue";
+
 // import radio from "./radio";
 import axios from "axios";
 export default {
-  components: { bannerTop },
+  components: { bannerTop, PopUpNews },
   created() {
     axios
       .get("https://intranet.meta.gov.co/web/url_navegacion/listado")

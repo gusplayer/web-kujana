@@ -18,7 +18,7 @@
         </div>
       </a>
     </el-carousel-item>
-    <!-- <el-carousel-item>
+    <el-carousel-item>
       <a class="banner-url">
         <img src="../assets/banners/b1.png" />
       </a>
@@ -27,7 +27,7 @@
       <a class="banner-url">
         <img src="../assets/banners/b2.png" />
       </a>
-    </el-carousel-item> -->
+    </el-carousel-item>
 
     <!-- <el-carousel-item v-for="item in items">
       <a :href="item.url" class="banner-url">

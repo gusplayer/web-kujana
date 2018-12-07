@@ -249,7 +249,7 @@ export default {
           url: "/prensa",
           children: [
             {
-              titulo: "Regístrate a noticias",
+              titulo: "Regístrate",
               haveChildren: false,
               childrenDynamic: false,
               url: "/formulario"

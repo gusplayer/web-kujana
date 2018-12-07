@@ -3,7 +3,7 @@
     <div id="fb-root"></div>
     <div class="general">
       <PopUp></PopUp>
-      <PopUpNews></PopUpNews>
+      <!-- <PopUpNews></PopUpNews> -->
 
       <!-- <menu-top ></menu-top> -->
 
