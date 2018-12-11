@@ -20,12 +20,12 @@
     </el-carousel-item>
     <el-carousel-item>
       <a class="banner-url">
-        <img src="../assets/banners/b1.png" />
+        <img src="../assets/banners/b3.jpg" />
       </a>
     </el-carousel-item>
     <el-carousel-item>
       <a class="banner-url">
-        <img src="../assets/banners/b2.png" />
+        <img src="../assets/banners/b4.jpg" />
       </a>
     </el-carousel-item>
 
