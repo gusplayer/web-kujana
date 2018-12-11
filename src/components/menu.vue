@@ -216,9 +216,17 @@ export default {
         {
           id: "1",
           titulo: "Quiénes somos",
-          haveChildren: false,
+          haveChildren: true,
           childrenDynamic: false,
-          url: "/about"
+          url: "/about",
+          children: [
+            {
+              titulo: "Mapa del sitio",
+              haveChildren: false,
+              childrenDynamic: false,
+              url: "/sitemap"
+            }
+          ]
         },
         {
           id: "2",
@@ -250,6 +258,12 @@ export default {
           children: [
             {
               titulo: "Regístrate",
+              haveChildren: false,
+              childrenDynamic: false,
+              url: "/formulario"
+            },
+            {
+              titulo: "Galería",
               haveChildren: false,
               childrenDynamic: false,
               url: "/formulario"

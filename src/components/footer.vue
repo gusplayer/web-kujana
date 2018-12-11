@@ -10,7 +10,7 @@
           <img src="../assets/logo.png">
         </a>
         <a>
-          <img src="../assets/colciencias.jpg">
+          <img src="../assets/ciente_logo.jpg">
         </a>
 
       </div>

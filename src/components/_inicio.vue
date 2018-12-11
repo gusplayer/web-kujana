@@ -1,6 +1,6 @@
 <template>
   <div class="general">
-    <PopUpNews></PopUpNews>
+    <!-- <PopUpNews></PopUpNews> -->
 
     <br>
     <div
@@ -289,6 +289,16 @@
           allowfullscreen
         >
         </iframe>
+
+        <iframe
+          class="lateral_video"
+          v-if="video_youtube"
+          src="https://www.youtube.com/embed/TUg9XhiV7EM"
+          frameborder="0"
+          allowfullscreen
+        >
+        </iframe>
+
         <!-- https://youtu.be/j8CUkpm5vek -->
         <br>
 

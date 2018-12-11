@@ -5,7 +5,7 @@
       <PopUp></PopUp>
       <!-- <PopUpNews></PopUpNews> -->
 
-      <!-- <menu-top ></menu-top> -->
+      <menu-top></menu-top>
 
       <div class="contenedor">
         <div class="menu">
@@ -60,7 +60,7 @@ export default {
   background-color: white;
 }
 .contenedor {
-  margin-top: 15px;
+  margin-top: 1px;
   max-width: 1200px;
   width: 100%;
   padding: 10px;

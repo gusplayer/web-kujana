@@ -1,29 +1,52 @@
 <template>
 
-  <div class="prensa"
-  v-loading="loading"
+  <div
+    class="prensa"
+    v-loading="loading"
     element-loading-text="Cargando Busqueda.."
     element-loading-spinner="el-icon-loading"
-    element-loading-background="rgba(0, 0, 0, 0.8)">
+    element-loading-background="rgba(0, 0, 0, 0.8)"
+  >
 
     <Breadcrumb></Breadcrumb>
 
-
-
     <center>
-        <h2>Buscador</h2>
-        <br>
-        <center><el-input style="width:350px" placeholder="Escribe aquí lo que quieres buscar" prefix-icon="el-icon-search" v-model="search"></el-input>
-          <el-button type="primary" v-on:click="searchDocs">Buscar Documentos</el-button></center>
+      <h2>Buscador</h2>
+      <br>
+      <center>
+        <el-input
+          style="width:350px"
+          placeholder="Escribe aquí lo que quieres buscar"
+          prefix-icon="el-icon-search"
+          v-model="search"
+        ></el-input>
+        <el-button
+          type="primary"
+          icon="el-icon-search"
+          v-on:click="searchDocs"
+        >Busqueda</el-button>
+      </center>
     </center><br><br>
 
-    <div class="contenedor" v-if="search != ''">
-        <div class="noticias" v-if="search != ''">
-          <br>
-            <br><p >... Resultados encontrados en noticias ...</p><br>
-            <div class="card" >
-            <el-col :span="8" v-for="(noticia,index) in filterData" :key="index" class="card-col">
-                <router-link :to="{ name: 'noticia',
+    <div
+      class="contenedor"
+      v-if="search != ''"
+    >
+      <div
+        class="noticias"
+        v-if="search != ''"
+      >
+        <br>
+        <br>
+        <p>... Resultados encontrados en noticias ...</p><br>
+        <div class="card">
+          <el-col
+            :span="8"
+            v-for="(noticia,index) in filterData"
+            :key="index"
+            class="card-col"
+          >
+            <router-link :to="{ name: 'noticia',
                                     params: {
                                     id: noticia.idTimeline,
                                     contenido: noticia.contenido,
@@ -31,40 +54,62 @@
                                     imagen: noticia.imagenes
                                     }
                                 }">
-                <el-card :body-style="{ padding: '0px' }">
-                    <div class="card-contenedor-imagen">
-                    <img v-if="noticia.imagenes[0]"
+              <el-card :body-style="{ padding: '0px' }">
+                <div class="card-contenedor-imagen">
+                  <img
+                    v-if="noticia.imagenes[0]"
                     :src="`https://intranet.meta.gov.co/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`"
-                    class="card-image">
-                    <img v-else
+                    class="card-image"
+                  >
+                  <img
+                    v-else
                     src="../assets/sinimagen.jpg"
-                    class="card-image">
-                    </div>            
-
-                    <div style="padding: 14px;">
-                    <span class="card-titulo">{{noticia.titulo}}</span>
-                    <div class="card-bottom card-clearfix">
-                        <time class="card-fecha">{{noticia.fecha}}</time>
-                        <el-button type="text" class="card-button">Ver más</el-button>
-                    </div>
-                    </div>
-                </el-card>
-                </router-link>
-                </el-col>
-            </div>
-        </div>
-        <div class="documentos" v-if="search != ''">
-            <br><br><p>... Resultados encontrados en documentos ...</p><br>
-            <div class="secciones_docs" v-for="(archivo, index) in docs.archivos" :key="index">
-                <i class="el-icon-document"></i>
-                <div class="secciones_docs_descarga">
-                   <p>{{archivo.nombre}}</p>
-                   <el-button type="primary" v-on:click="getContentFile(archivo.id)">Descarga</el-button>
+                    class="card-image"
+                  >
                 </div>
-            </div>
+
+                <div style="padding: 14px;">
+                  <span class="card-titulo">{{noticia.titulo}}</span>
+                  <div class="card-bottom card-clearfix">
+                    <time class="card-fecha">{{noticia.fecha}}</time>
+                    <el-button
+                      type="text"
+                      class="card-button"
+                    >Ver más</el-button>
+                  </div>
+                </div>
+              </el-card>
+            </router-link>
+          </el-col>
         </div>
+      </div>
+      <div
+        class="documentos"
+        v-if="search != ''"
+      >
+        <br><br>
+        <p>... Resultados encontrados en documentos ...</p><br>
+        <div
+          class="secciones_docs"
+          v-for="(archivo, index) in docs.archivos"
+          :key="index"
+        >
+          <i class="el-icon-document"></i>
+          <div class="secciones_docs_descarga">
+            <p>{{archivo.nombre}}</p>
+            <el-button
+              type="primary"
+              v-on:click="getContentFile(archivo.id)"
+            >Descarga</el-button>
+          </div>
+        </div>
+      </div>
     </div>
-      <a id='downfile' download='descarga' style="display:none;" />
+    <a
+      id='downfile'
+      download='descarga'
+      style="display:none;"
+    />
 
   </div>
 
