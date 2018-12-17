@@ -11,7 +11,8 @@
     <Breadcrumb></Breadcrumb>
 
     <center>
-      <h2>Buscador</h2>
+      <h2>Buscador</h2><br>
+      <p>Escribe una palabra relacionada, el sistema buscara en noticias y documentos. </p>
       <br>
       <center>
         <el-input
@@ -58,7 +59,7 @@
                 <div class="card-contenedor-imagen">
                   <img
                     v-if="noticia.imagenes[0]"
-                    :src="`https://intranet.meta.gov.co/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`"
+                    :src="`https://panel.fablabkujana.com/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`"
                     class="card-image"
                   >
                   <img
@@ -123,7 +124,7 @@ export default {
   components: { BannerMicro, Breadcrumb },
   created() {
     axios
-      .get("https://intranet.meta.gov.co/web/timeline")
+      .get("https://panel.fablabkujana.com/web/timeline")
       .then(response => {
         this.noticias = response.data.timeline;
         this.loading = false;
@@ -150,7 +151,7 @@ export default {
   methods: {
     searchDocs() {
       axios
-        .post("https://intranet.meta.gov.co/api/documentos/buscar", {
+        .post("https://panel.fablabkujana.com/api/documentos/buscar", {
           documento: this.search
         })
         .then(response => {
@@ -164,7 +165,7 @@ export default {
         contrasena: ""
       };
       axios
-        .post("https://intranet.meta.gov.co/web/archivo", json, {
+        .post("https://panel.fablabkujana.com/web/archivo", json, {
           responseType: "arraybuffer"
         })
         .then(response => {

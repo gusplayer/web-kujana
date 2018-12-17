@@ -100,6 +100,11 @@ export default new Router({
       component: Sitemap
     },
     {
+      path: "/documentacion",
+      name: "documentacion",
+      component: Documentacion
+    },
+    {
       path: "/formulario",
       name: "formulario",
       component: Formulario

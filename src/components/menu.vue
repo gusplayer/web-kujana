@@ -225,6 +225,12 @@ export default {
               haveChildren: false,
               childrenDynamic: false,
               url: "/sitemap"
+            },
+            {
+              titulo: "Documentación",
+              haveChildren: false,
+              childrenDynamic: false,
+              url: "/documentacion"
             }
           ]
         },
@@ -266,7 +272,7 @@ export default {
               titulo: "Galería",
               haveChildren: false,
               childrenDynamic: false,
-              url: "/formulario"
+              url: "/galeria"
             }
           ]
         },
