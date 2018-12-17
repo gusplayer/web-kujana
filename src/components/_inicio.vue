@@ -31,7 +31,7 @@
       <el-popover
         placement="top-start"
         width="350"
-        trigger="click"
+        trigger="hover"
         class="botones_banner_movil"
       >
         <div
@@ -60,7 +60,7 @@
       <el-popover
         placement="top-start"
         width="350"
-        trigger="click"
+        trigger="hover"
         class="botones_banner_movil"
       >
         <div style="background-color: #EEEEEE; padding: 15px">
@@ -88,7 +88,7 @@
       <el-popover
         placement="top-start"
         width="350"
-        trigger="click"
+        trigger="hover"
         class="botones_banner_movil"
       >
         <div style="background-color: #EEEEEE; padding: 15px">
@@ -116,7 +116,7 @@
       <el-popover
         placement="top-start"
         width="350"
-        trigger="click"
+        trigger="hover"
         class="botones_banner_movil"
       >
         <div style="background-color: #EEEEEE; padding: 15px">

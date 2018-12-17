@@ -263,16 +263,22 @@ export default {
           url: "/prensa",
           children: [
             {
-              titulo: "Regístrate",
+              titulo: "Archivo de noticias",
               haveChildren: false,
               childrenDynamic: false,
-              url: "/formulario"
+              url: "/prensa"
             },
             {
-              titulo: "Galería",
+              titulo: "Galería multimedia",
               haveChildren: false,
               childrenDynamic: false,
               url: "/galeria"
+            },
+            {
+              titulo: "Concurso",
+              haveChildren: false,
+              childrenDynamic: false,
+              url: "/formulario"
             }
           ]
         },

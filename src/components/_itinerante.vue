@@ -11,7 +11,7 @@
       <div class="texto">
         <h1>Itinerante</h1><br><br>
         <p>
-          Nuestra meta es llevar a las aulas de clase la innovación, la ciencia y la tecnología. Buscamos presentar de manera organizada a niños, niñas y jovenes de diferentes instituciones educativas en toda la región, la manera de entrar en contacto con la tecnología, promoviendo lo busqueda de soluciones a problemáticas sociales desde la tarea más básica como lo es generar una idea.
+          Nuestra meta es llevar a las aulas de clase la innovación, la ciencia y la tecnología. Buscamos presentar de manera organizada a niños, niñas y jovenes de diferentes instituciones educativas en toda la región, la manera de entrar en contacto con la tecnología, promoviendo la busqueda de soluciones a problemáticas sociales desde la tarea más básica como lo es generar una idea.
           <br><br>
 
           A través de herramientas relacionadas al desarrollo de software, la impresión 3D y el diseño digital, las aulas de clase se ven beneficiadas con el sistema de aprendizaje de Fab Lab Kujana. Creando una interacción dinámica por estaciones de Ideación, Diseño, Prototipado y Socialización

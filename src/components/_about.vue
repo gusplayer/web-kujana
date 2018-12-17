@@ -12,7 +12,7 @@
         <h1>¿Quiénes somos?</h1><br> <br>
         <p>
           El laboratorio de fabricación FabLab es un espacio de innovación digital, cuenta con una serie de máquinas para la experimentación, prototipado y manufactura.<br><br>
-          El FabLab está abierto para diferentes disciplinas y/o carreras, es un espacio para creadores, inventores, artistas y personas creativas que estén dispuestas a compartir sus habilidades y experiencias que contribuyan a resolver problemas tanto locales como globales enfocados en la la ciencia, tecnología e innovación unidos por un tejido de red colaborativa.
+          El FabLab está abierto para diferentes disciplinas y/o carreras, es un espacio para creadores, inventores, artistas y personas creativas que estén dispuestas a compartir sus habilidades y experiencias que contribuyan a resolver problemas tanto locales como globales enfocados en la ciencia, tecnología e innovación unidos por un tejido de red colaborativa.
           En el FabLab Kujana constituye un espacio para que los estudiantes de la región del Meta puedan experimentar y tener un acercamiento a la ciencia, tecnología e innovación.
 
         </p>

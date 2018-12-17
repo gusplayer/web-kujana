@@ -9,79 +9,50 @@
   >
 
     <Breadcrumb></Breadcrumb>
-    <BannerMicro
-      :texto="texto"
-      :imagen="imagenBanner"
-    ></BannerMicro>
 
-    <center>
-      <el-input
-        style="width:350px"
-        placeholder="Buscar"
-        prefix-icon="el-icon-search"
-        v-model="search"
-      ></el-input>
-    </center>
-
-    <div class="card">
-      <el-col
-        :span="8"
+    <div class="content">
+      <div
+        class="card"
         v-for="(noticia,index) in filterData"
         :key="index"
-        class="card-col"
       >
-        <router-link :to="{ name: 'noticia',
-                             params: {
-                               id: noticia.idTimeline,
-                               contenido: noticia.contenido,
-                               titulo: noticia.titulo,
-                               imagen: noticia.imagenes
-                             }
-                           }">
-          <el-card :body-style="{ padding: '0px' }">
-            <div class="card-contenedor-imagen">
-              <img
-                v-if="noticia.imagenes[0]"
-                :src="`https://panel.fablabkujana.com/imagen_timeline/${noticia.imagenes[0].nombre_imagen}`"
-                class="card-image"
-              >
-              <!-- <img
-                v-if="noticia.imagenes[0]"
-                :src="noticia.imagenes[0].nombre_imagen"
-                class="card-image"
-              > -->
+        <img
+          :src="noticia"
+          class="image"
+          @click="onClick(index)"
+        >
 
-              <img
-                v-else
-                src="../assets/sinimagen.jpg"
-                class="card-image"
-              >
-              <!-- <p>{{noticia.imagenes[0].nombre_imagen}}</p> -->
-            </div>
-
-            <div style="padding: 14px;">
-              <span class="card-titulo">{{noticia.titulo}}</span>
-              <div class="card-bottom card-clearfix">
-                <time class="card-fecha">{{noticia.fecha}}</time>
-                <el-button
-                  type="text"
-                  class="card-button"
-                >Ver más</el-button>
-              </div>
-            </div>
-          </el-card>
-        </router-link>
-      </el-col>
+      </div>
+      <vue-gallery-slideshow
+        :images="filterData"
+        :index="index"
+        @close="index = null"
+      ></vue-gallery-slideshow>
     </div>
+    <div class="content-videos">
+      <iframe
+        class="video"
+        src="https://www.youtube.com/embed/j8CUkpm5vek"
+        frameborder="0"
+        allowfullscreen
+      >
+      </iframe>
+      <iframe
+        class="video"
+        src="https://www.youtube.com/embed/TUg9XhiV7EM"
+        frameborder="0"
+        allowfullscreen
+      >
+      </iframe>
+      <iframe
+        class="video"
+        src="https://www.youtube.com/embed/txHkvyI1n3k"
+        frameborder="0"
+        allowfullscreen
+      >
+      </iframe>
 
-    <center>
-      <el-input
-        style="width:350px"
-        placeholder="Buscar"
-        prefix-icon="el-icon-search"
-        v-model="search"
-      ></el-input>
-    </center>
+    </div>
 
   </div>
 </template>
@@ -90,8 +61,10 @@
 import axios from "axios";
 import BannerMicro from "./bannerMicro.vue";
 import Breadcrumb from "./breadcrumb.vue";
+import VueGallerySlideshow from "vue-gallery-slideshow";
+
 export default {
-  components: { BannerMicro, Breadcrumb },
+  components: { BannerMicro, Breadcrumb, VueGallerySlideshow },
   created() {
     axios
       .get("https://panel.fablabkujana.com/web/timeline")
@@ -106,130 +79,83 @@ export default {
   data() {
     return {
       noticias: [],
-      texto: null,
       imagenBanner: require("../assets/banners/noticias.jpg"),
-      search: "",
-      loading: true
+      loading: true,
+      index: null
     };
+  },
+  methods: {
+    onClick(i) {
+      this.index = i;
+    }
   },
   computed: {
     filterData: function() {
-      let algo = this.noticias.filter(dato => {
-        if (dato.titulo != null) {
-          let tittle = dato.titulo.toUpperCase();
-          return tittle.includes(this.search.toUpperCase());
+      let noticia = this.noticias.map(dato => {
+        if (dato.imagenes[0]) {
+          let image = dato.imagenes[0].nombre_imagen;
+          return `https://panel.fablabkujana.com/imagen_timeline/${image}`;
         }
       });
-      return algo.slice(0, 192);
+      return noticia;
     }
   }
 };
 </script>
 
 <style scoped>
-.contenedor_blog {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.contenedor_buscador {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-  margin-bottom: -5px;
-}
-.buscador {
-  width: 500px;
-}
-.time {
-  font-size: 15px;
-  color: #999;
-}
-.el-col {
-  padding: 5px;
-  margin-bottom: 20px;
-}
-
-.bottom {
-  margin-top: 13px;
-  line-height: 12px;
-}
-
-.button {
-  padding: 0;
-  float: right;
-}
-
-.image {
-  width: 100%;
-  display: block;
-}
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-
-.clearfix:after {
-  clear: both;
-}
-.card {
+.content {
+  margin-top: 30px;
+  padding-top: 30px;
   display: flex;
   flex: 1;
-  margin-bottom: 30px;
   justify-content: space-between;
+  justify-content: flex-start;
+  flex-direction: row;
   flex-wrap: wrap;
-}
-.card-time {
-  font-size: 13px;
-  color: #999;
-}
-
-.card-bottom {
-  margin-top: 13px;
-  line-height: 12px;
-}
-
-.card-button {
-  padding: 0;
-  float: right;
-}
-
-.card-clearfix:before,
-.card-clearfix:after {
-  display: table;
-  content: "";
-}
-
-.card-clearfix:after {
-  clear: both;
-}
-.card-col {
-  display: flex;
-  max-width: 380px;
-  min-width: 250px;
   width: 100%;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 10px;
+  background-color: rgb(233, 233, 233);
 }
-.card-contenedor-imagen {
+.card {
+  width: 210px;
+  height: 110px;
+  margin: 13px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  cursor: pointer;
   overflow: hidden;
-  height: 170px;
+  transition: 0.5s ease;
+  background-color: aliceblue;
+  opacity: 0.9;
 }
-.card-image {
+
+.card:hover .image {
+  background-color: transparent;
+  opacity: 0.3;
+}
+.card:hover .middle {
+  opacity: 1;
+}
+.image {
   width: 100%;
-  display: block;
+  transition: 0.8s ease;
 }
-.card-titulo {
-  font-size: 11 pt;
+.text {
+  background-color: #4a39dd;
+  color: white;
+  font-size: 20px;
+  padding: 16px 32px;
 }
-.card-fecha {
-  font-size: 13px;
-  color: #999;
+.content-videos {
+  height: auto;
+  width: 100%;
+}
+.video {
+  margin: 12px;
+  width: 365px;
+  height: 235px;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 500px) {
