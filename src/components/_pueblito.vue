@@ -18,6 +18,127 @@
           Nuevamente la innovación, la ciencia y la tecnología son foco de aprendizaje para los niños, niñas y jóvenes que participan de esta experiencia, siendo partícipes de la mesa de Ideación y conociendo de igual manera los prototipos y productos desarrollados.
         </p>
       </div>
+
+      <div
+        class="botones_banner"
+        v-loading="loading"
+      >
+        <!-- <a class="botones_banner_movil">
+        <img src="../assets/botones/b1.png">
+      </a> -->
+        <el-popover
+          placement="top-start"
+          width="350"
+          trigger="hover"
+          class="botones_banner_movil"
+        >
+          <div
+            class="popover"
+            style="background-color: #EEEEEE; padding: 15px"
+          >
+            <h2>Ideación</h2>
+            <br>
+            <p>Desde Fab Lab Kujana orientamos la fase de Ideación a una simple pregunta, <br><br><b>¿Cómo se genera una idea?</b> <br><br>A través de la experiencia previa de los participantes y la identificación de problemas sociales, buscamos crear soluciones innovadoras a través de las herramientas de la Ciudadela del Saber y el emprendimiento TIC.
+              Integramos diversas áreas de conocimiento para reconocer oportunidades de negocio, creando y formando ideas enfocadas en mercados y clientes específicos hasta llegar a la resolución de un problema.
+            </p>
+            <br>
+            <img
+              src="../assets/botones/b1.png"
+              width="100%"
+            >
+          </div>
+          <el-button
+            style="padding: 0px; border-radius: 0px"
+            slot="reference"
+          >
+            <img src="../assets/botones/b1.png">
+          </el-button>
+        </el-popover>
+
+        <el-popover
+          placement="top-start"
+          width="350"
+          trigger="hover"
+          class="botones_banner_movil"
+        >
+          <div style="background-color: #EEEEEE; padding: 15px">
+            <h2>Diseño</h2>
+            <br>
+            <p>La apropiación social de ciencia, tecnología e innovación (ASCTI), es una estrategia indispensable para que podamos reducir brechas sociales en el departamento del Meta, es por ello que la secretaría de TIC, ciencia y tecnología, propende por implementar procesos innovadores, científicos y tecnológicos en las aulas, construyendo y diseñando proyectos mediante el uso de las herramientas y metodologías de FabLab Kujana.
+              <br><br>
+              El diseño va más allá de las dimensiones, el aspecto, la forma y el color, también se analiza su funcionalidad, la utilidad, la operatividad, la eficiencia y su interacción con el usuario, permitiendo validar hipótesis, pero principalmente facilitando que la comunidad educativa, afiance conocimientos, resiliencia y capacidad para mejorar constantemente.
+
+            </p>
+            <br>
+            <img
+              src="../assets/botones/b2.png"
+              width="100%"
+            >
+          </div>
+          <el-button
+            style="padding: 0px; border-radius: 0px"
+            slot="reference"
+          >
+            <img src="../assets/botones/b2.png">
+          </el-button>
+        </el-popover>
+
+        <el-popover
+          placement="top-start"
+          width="350"
+          trigger="hover"
+          class="botones_banner_movil"
+        >
+          <div style="background-color: #EEEEEE; padding: 15px">
+            <h2>Prototipado</h2>
+            <br>
+            <p>Prototipar hace referencia a la acción y al proceso de creación de un modelo y las posteriores pruebas del producto. Esta actividad se centra en el uso de herramientas tecnológicas para proyectar soluciones a través de mecanismos que permitan validar e indicar el potencial del proyecto innovador.
+              <br><br>
+              En esta etapa se genera un acercamiento al desarrollo de soluciones de forma práctica y lúdica, aprovechando herramientas de impresión 3D, el desarrollo de software, aplicaciones web y móviles, facilitando el desarrollo de competencias de validación de las diversas variables que influyen en una solución final y su aceptación por usuarios y clientes.
+
+            </p>
+            <br>
+            <img
+              src="../assets/botones/b3.png"
+              width="100%"
+            >
+          </div>
+          <el-button
+            style="padding: 0px; border-radius: 0px"
+            slot="reference"
+          >
+            <img src="../assets/botones/b3.png">
+          </el-button>
+        </el-popover>
+
+        <el-popover
+          placement="top-start"
+          width="350"
+          trigger="hover"
+          class="botones_banner_movil"
+        >
+          <div style="background-color: #EEEEEE; padding: 15px">
+            <h2>Socialización</h2>
+            <br>
+            <p>Los participantes validan los prototipos, realizan un pitch y presentan una solución a los problemas sociales a través del uso de la ciencia, la tecnología y la innovación.
+              Además de divulgar los resultados y presentar los productos, se expone la recopilación gráfica que evidencia el trabajo realizado en las anteriores fases de Ideación, Diseño y Prototipado, con el objetivo de compartir experiencias y conocimientos.
+
+            </p>
+            <br>
+            <img
+              src="../assets/botones/b4.png"
+              width="100%"
+            >
+          </div>
+          <el-button
+            style="padding: 0px; border-radius: 0px"
+            slot="reference"
+          >
+            <img src="../assets/botones/b4.png">
+          </el-button>
+        </el-popover>
+
+      </div>
     </div>
 
   </div>
@@ -72,6 +193,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 .texto {
   display: flex;
@@ -85,6 +207,72 @@ h3 {
 .google_maps {
   display: flex;
   min-width: 400px;
+}
+
+.botones_banner {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.botones_banner img {
+  width: 100%;
+}
+.botones_banner_responsive a {
+  display: none;
+  transition: 1s;
+}
+
+.botones_banner_accion {
+  min-width: 199px;
+  width: 100%;
+  height: 128px;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #9b9b9b;
+  box-shadow: 0 1px 4px 0 rgba(118, 118, 118, 0.38);
+  margin: 5px;
+  transition: 1s;
+}
+.botones_banner_accion a:hover {
+  transform: scale(1.05);
+}
+.botones_banner_accion a img:hover {
+  transform: scale(1.05);
+  filter: saturate(5);
+}
+.botones_banner_accion div {
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+}
+.botones_banner_accion img {
+  padding: 0px;
+}
+.botones_banner_movil {
+  min-width: 199px;
+  width: 100%;
+  /* height: 128px; */
+  display: flex;
+  flex: 1;
+  background-color: #f8f8f8;
+  border-color: #f1f1f1;
+  box-shadow: 0 1px 4px 0 rgba(164, 160, 160, 0.9);
+  margin: 5px;
+}
+.botones_banner_movil {
+  transition: 1s;
+}
+.botones_banner_movil:hover {
+  transform: scale(1.03);
+  filter: grayscale(1);
+}
+.popover {
+  width: 100%;
 }
 
 @media screen and (max-width: 900px) {
