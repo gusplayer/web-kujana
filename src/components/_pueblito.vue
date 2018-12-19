@@ -242,7 +242,27 @@ h3 {
   padding: 15px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
+  .botones_banner_movil {
+    min-width: 199px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #f8f8f8;
+    border-color: #f1f1f1;
+    box-shadow: 0 1px 4px 0 rgba(164, 160, 160, 0.9);
+    margin: 5px;
+  }
+  .popover-img {
+    width: 100%;
+    background-color: #f8f8f8;
+  }
+  .popover-text {
+    width: 100%;
+    background-color: #eeeeee;
+    padding: 15px;
+  }
   .texto {
     margin-right: 0px;
     margin-bottom: 15px;
