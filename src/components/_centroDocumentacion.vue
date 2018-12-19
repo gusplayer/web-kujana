@@ -2,58 +2,127 @@
   <section id="documentos">
 
     <Breadcrumb></Breadcrumb>
-    <BannerMicro :texto="texto" :imagen="imagenBanner"></BannerMicro>
+    <BannerMicro
+      :texto="texto"
+      :imagen="imagenBanner"
+    ></BannerMicro>
 
-    <el-dialog title="Ingresar Contraseña" :visible.sync="getPassword" class="getPassword" :size="sizeDialog">
-      <el-input type="password" placeholder="Contraseña" v-model="currentPassword"></el-input>
-      <el-button type="primary" v-on:click="getFiles">Validar</el-button>
+    <el-dialog
+      title="Ingresar Contraseña"
+      :visible.sync="getPassword"
+      class="getPassword"
+      :size="sizeDialog"
+    >
+      <el-input
+        type="password"
+        placeholder="Contraseña"
+        v-model="currentPassword"
+      ></el-input>
+      <el-button
+        type="primary"
+        v-on:click="getFiles"
+      >Validar</el-button>
     </el-dialog>
 
-    <el-dialog title="Ingresar Contraseña" :visible.sync="getPasswordFile" class="getPassword" :size="sizeDialog">
-      <el-input type="password" placeholder="Contraseña" v-model="currentPassword"></el-input>
-      <el-button type="primary" v-on:click="getContentFile">Validar</el-button>
-    </el-dialog> 
+    <el-dialog
+      title="Ingresar Contraseña"
+      :visible.sync="getPasswordFile"
+      class="getPassword"
+      :size="sizeDialog"
+    >
+      <el-input
+        type="password"
+        placeholder="Contraseña"
+        v-model="currentPassword"
+      ></el-input>
+      <el-button
+        type="primary"
+        v-on:click="getContentFile"
+      >Validar</el-button>
+    </el-dialog>
 
     <div class="documents">
 
       <div class="documents_title">
         <div class="documents_title_top">
-            <h2>Documentos</h2>
+          <h2>Documentos</h2>
           <p>Organiza y encuentra tus archivos</p>
         </div>
 
         <div style="display:flex; flex-wrap:wrap; flex-direction:space-between">
-          <div class="" style="width:80%">
-            <p>Selecciona una carpeta <i class="material-icons folder_icon" style="color:rgb(68, 132, 190); margin-bottom:-15px">folder_open</i> o un archivo <i class="material-icons" style="color: rgb(204, 169, 21)">insert_drive_file</i> <br /><br />Navega entre carpetas con las flechas de tu teclado o la barra en la parte de abajo, recuerda que a medida que abres carpetas puede desplazarte hace la derecha para ver mas contenido</p>
+          <div
+            class=""
+            style="width:80%"
+          >
+            <p>Selecciona una carpeta <i
+                class="material-icons folder_icon"
+                style="color:rgb(68, 132, 190); margin-bottom:-15px"
+              >folder_open</i> o un archivo <i
+                class="material-icons"
+                style="color: rgb(204, 169, 21)"
+              >insert_drive_file</i> <br /><br />Navega entre carpetas con las flechas de tu teclado o la barra en la parte de abajo, recuerda que a medida que abres carpetas puede desplazarte hace la derecha para ver mas contenido</p>
           </div>
-          <div class="" style="width:20%">
-            <img src="../assets/teclas2.jpg" width="60%">
+          <div
+            class=""
+            style="width:20%"
+          >
+            <img
+              src="../assets/teclas2.jpg"
+              width="60%"
+            >
           </div>
         </div>
 
         <hr>
       </div>
-      <div id="columns" class="documents_columns">
-        <div class="documents__column" v-for="(column, index) in columns">
+      <div
+        id="columns"
+        class="documents_columns"
+      >
+        <div
+          class="documents__column"
+          v-for="(column, index) in columns"
+        >
 
-              <template v-for="item in column">
-                <div v-if="!item.archivo" :id="`folder${item.id}`" :class="`folder column${index}`" v-on:click="validateGetFiles($event, item, index)">
-                  <i class="material-icons folder_icon">folder_open</i>
-                  <p>{{item.nombre}}</p>
-                  <i class="material-icons folder_options" v-on:click="gialogOptions(item)">more_vert</i>
-                </div>
-                <div v-else class="file" :id="`file${item.id}`" v-on:click="validateGetContentFile($event, item)">
-                  <i class="material-icons">insert_drive_file</i>
-                  <p>{{item.nombre}}</p>
-                </div>
-              </template>
+          <template v-for="item in column">
+            <div
+              v-if="!item.archivo"
+              :id="`folder${item.id}`"
+              :class="`folder column${index}`"
+              v-on:click="validateGetFiles($event, item, index)"
+            >
+              <i class="material-icons folder_icon">folder_open</i>
+              <p>{{item.nombre}}</p>
+              <i
+                class="material-icons folder_options"
+                v-on:click="gialogOptions(item)"
+              >more_vert</i>
+            </div>
+            <div
+              v-else
+              class="file"
+              :id="`file${item.id}`"
+              v-on:click="validateGetContentFile($event, item)"
+            >
+              <i class="material-icons">insert_drive_file</i>
+              <p>{{item.nombre}}</p>
+            </div>
+          </template>
 
         </div>
-        <div v-if="waitContent" class="documents__column documents__column_loader" v-loading.body="true">
+        <div
+          v-if="waitContent"
+          class="documents__column documents__column_loader"
+          v-loading.body="true"
+        >
         </div>
       </div>
     </div>
-    <a id='dwnldLnk' :download='this.currentFile.nombre' style="display:none;" />
+    <a
+      id='dwnldLnk'
+      :download='this.currentFile.nombre'
+      style="display:none;"
+    />
   </section>
 </template>
 
@@ -65,7 +134,7 @@ export default {
   components: { BannerMicro, Breadcrumb },
   created() {
     axios
-      .get("https://intranet.meta.gov.co/web/carpetas/listado")
+      .get("https://fablabkujana.com/web/carpetas/listado")
       .then(response => {
         this.foldersData = response.data.carpetas;
       });
@@ -129,7 +198,7 @@ export default {
         carpetas: result
       };
       axios
-        .post("https://intranet.meta.gov.co/carpeta/ordenar", json)
+        .post("https://fablabkujana.com/carpeta/ordenar", json)
         .then(response => {});
     },
     checkMove: function(evt) {
@@ -166,7 +235,7 @@ export default {
         this.columns = this.columns.slice(0, this.currentIndex + 1);
       }
       axios
-        .post("https://intranet.meta.gov.co/web/carpetas/ver", json)
+        .post("https://fablabkujana.com/web/carpetas/ver", json)
         .then(response => {
           let newColumn = response.data.data.subcarpetas.concat(
             response.data.data.archivos
@@ -193,7 +262,7 @@ export default {
       };
       this.currentPassword = "";
       axios
-        .post("https://intranet.meta.gov.co/web/archivo", json, {
+        .post("https://fablabkujana.com/web/archivo", json, {
           responseType: "arraybuffer"
         })
         .then(response => {
@@ -221,13 +290,12 @@ export default {
     deleteFolder() {
       axios
         .delete(
-          `https://intranet.meta.gov.co/carpetas/${this.currentFolderEdit.id}`
+          `https://fablabkujana.com/carpetas/${this.currentFolderEdit.id}`
         )
         .then(response => {
           document.getElementById(
             `folder${this.currentFolderEdit.id}`
-          ).style.display =
-            "none";
+          ).style.display = "none";
           this.dialogEditFolder = false;
         });
     },
