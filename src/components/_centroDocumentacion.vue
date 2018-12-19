@@ -134,7 +134,7 @@ export default {
   components: { BannerMicro, Breadcrumb },
   created() {
     axios
-      .get("https://fablabkujana.com/web/carpetas/listado")
+      .get("https://panel.fablabkujana.com/web/carpetas/listado")
       .then(response => {
         this.foldersData = response.data.carpetas;
       });
@@ -198,7 +198,7 @@ export default {
         carpetas: result
       };
       axios
-        .post("https://fablabkujana.com/carpeta/ordenar", json)
+        .post("https://panel.fablabkujana.com/carpeta/ordenar", json)
         .then(response => {});
     },
     checkMove: function(evt) {
@@ -235,7 +235,7 @@ export default {
         this.columns = this.columns.slice(0, this.currentIndex + 1);
       }
       axios
-        .post("https://fablabkujana.com/web/carpetas/ver", json)
+        .post("https://panel.fablabkujana.com/web/carpetas/ver", json)
         .then(response => {
           let newColumn = response.data.data.subcarpetas.concat(
             response.data.data.archivos
@@ -262,7 +262,7 @@ export default {
       };
       this.currentPassword = "";
       axios
-        .post("https://fablabkujana.com/web/archivo", json, {
+        .post("https://panel.fablabkujana.com/web/archivo", json, {
           responseType: "arraybuffer"
         })
         .then(response => {
@@ -290,7 +290,7 @@ export default {
     deleteFolder() {
       axios
         .delete(
-          `https://fablabkujana.com/carpetas/${this.currentFolderEdit.id}`
+          `https://panel.fablabkujana.com/carpetas/${this.currentFolderEdit.id}`
         )
         .then(response => {
           document.getElementById(
