@@ -33,13 +33,27 @@
       class="contenedor"
       v-if="search != ''"
     >
+
+      <div class="contenedor-paginas">
+        <p><b>Páginas encontradas en la busqueda</b></p>
+        <br>
+        <router-link
+          v-for="(page , index) in paginas"
+          :key="index"
+          :to="page.path"
+          class="router-paginas"
+        >
+          <p>{{page.breadcrumb}} <b>{{page.titulo}}</b> </p>
+        </router-link>
+      </div>
+
       <div
         class="noticias"
         v-if="search != ''"
       >
         <br>
         <br>
-        <p>... Resultados encontrados en noticias ...</p><br>
+        <p><b>Resultados encontrados en noticias</b></p><br>
         <div class="card">
           <el-col
             :span="8"
@@ -89,7 +103,7 @@
         v-if="search != ''"
       >
         <br><br>
-        <p>... Resultados encontrados en documentos ...</p><br>
+        <p><b>Resultados encontrados en documentos </b></p><br>
         <div
           class="secciones_docs"
           v-for="(archivo, index) in docs.archivos"
@@ -145,7 +159,54 @@ export default {
       imagenBanner: require("../assets/prensa.jpg"),
       search: "",
       loading: true,
-      docs: ""
+      docs: "",
+      paginas: [
+        {
+          titulo: "Inicio",
+          path: "/",
+          breadcrumb: " "
+        },
+        {
+          titulo: "Quienes somos",
+          path: "/about",
+          breadcrumb: "Inicio > "
+        },
+        {
+          titulo: "Mapa del sitio",
+          path: "/sitemap",
+          breadcrumb: "Inicio > Quiénes somos > "
+        },
+        {
+          titulo: "Documentación",
+          path: "/documentacion",
+          breadcrumb: "Inicio > Quiénes somos > "
+        },
+        {
+          titulo: "Pueblito Llanero",
+          path: "/pueblito",
+          breadcrumb: "Inicio > Experiencia > "
+        },
+        {
+          titulo: "Kujana Itinerante",
+          path: "/itinerante",
+          breadcrumb: "Inicio > Experiencia > "
+        },
+        {
+          titulo: "Noticias",
+          path: "/prensa",
+          breadcrumb: "Inicio > "
+        },
+        {
+          titulo: "Galería multimedia",
+          path: "/galeria",
+          breadcrumb: "Inicio > Noticias > "
+        },
+        {
+          titulo: "Contáctanos",
+          path: "/contacto",
+          breadcrumb: "Inicio > "
+        }
+      ]
     };
   },
   methods: {
@@ -213,8 +274,44 @@ export default {
 }
 .contenedor {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
+.contenedor-paginas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin-bottom: 15px;
+  background-color: #e4eaf1;
+}
+.router-paginas {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(154, 152, 152, 0.5);
+  color: rgb(44, 44, 44);
+  padding: 10px;
+  margin-bottom: 14px;
+  width: 400px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 1s;
+}
+.router-paginas b {
+  font-weight: 700;
+  color: rgb(0, 102, 255);
+}
+.router-paginas:hover {
+  background-color: #f3f2f2;
+  box-shadow: 0 2px 4px 0 rgba(252, 186, 45, 0.5);
+  color: rgb(44, 44, 44);
+  font-weight: 400;
+  transform: scale(1.05);
+}
+.router-paginas:hover b {
+  font-weight: 700;
+  color: rgb(19, 99, 3);
+}
+
 .noticias {
   display: flex;
   flex: 1;
