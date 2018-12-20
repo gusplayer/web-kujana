@@ -25,7 +25,7 @@
           type="primary"
           icon="el-icon-search"
           v-on:click="searchDocs"
-        >Busqueda</el-button>
+        >Buscar documentos</el-button>
       </center>
     </center><br><br>
 
@@ -34,11 +34,14 @@
       v-if="search != ''"
     >
 
-      <div class="contenedor-paginas">
+      <div
+        class="contenedor-paginas"
+        v-show="filterDataPages.length"
+      >
         <p><b>Páginas encontradas en la busqueda</b></p>
         <br>
         <router-link
-          v-for="(page , index) in paginas"
+          v-for="(page , index) in filterDataPages"
           :key="index"
           :to="page.path"
           class="router-paginas"
@@ -50,6 +53,7 @@
       <div
         class="noticias"
         v-if="search != ''"
+        v-show="filterData.length"
       >
         <br>
         <br>
@@ -169,42 +173,50 @@ export default {
         {
           titulo: "Quienes somos",
           path: "/about",
-          breadcrumb: "Inicio > "
+          breadcrumb: "Inicio > ",
+          tags: "quienes somos nosotros"
         },
         {
           titulo: "Mapa del sitio",
           path: "/sitemap",
-          breadcrumb: "Inicio > Quiénes somos > "
+          breadcrumb: "Inicio > Quiénes somos > ",
+          tags: "quienes somos nosotros"
         },
         {
           titulo: "Documentación",
           path: "/documentacion",
-          breadcrumb: "Inicio > Quiénes somos > "
+          breadcrumb: "Inicio > Quiénes somos > ",
+          tags: "quienes somos nosotros"
         },
         {
           titulo: "Pueblito Llanero",
           path: "/pueblito",
-          breadcrumb: "Inicio > Experiencia > "
+          breadcrumb: "Inicio > Experiencia > ",
+          tags: "quienes somos nosotros"
         },
         {
           titulo: "Kujana Itinerante",
           path: "/itinerante",
-          breadcrumb: "Inicio > Experiencia > "
+          breadcrumb: "Inicio > Experiencia > ",
+          tags: "quienes somos nosotros"
         },
         {
           titulo: "Noticias",
           path: "/prensa",
-          breadcrumb: "Inicio > "
+          breadcrumb: "Inicio > ",
+          tags: "quienes somos nosotros"
         },
         {
           titulo: "Galería multimedia",
           path: "/galeria",
-          breadcrumb: "Inicio > Noticias > "
+          breadcrumb: "Inicio > Noticias > ",
+          tags: "quienes somos nosotros"
         },
         {
           titulo: "Contáctanos",
           path: "/contacto",
-          breadcrumb: "Inicio > "
+          breadcrumb: "Inicio > ",
+          tags: "quienes somos nosotros"
         }
       ]
     };
@@ -219,6 +231,7 @@ export default {
           this.docs = response.data;
         });
     },
+
     getContentFile(idfile) {
       console.log("si entra");
       let json = {
@@ -254,6 +267,13 @@ export default {
         }
       });
       return algo.slice(0, 42);
+    },
+    filterDataPages: function() {
+      let algo = this.paginas.filter(dato => {
+        let tittle = dato.titulo.toUpperCase();
+        return tittle.includes(this.search.toUpperCase());
+      });
+      return algo;
     }
   }
 };
