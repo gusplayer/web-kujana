@@ -16,16 +16,12 @@
       <br>
       <center>
         <el-input
-          style="width:350px"
+          class="input-buscador"
           placeholder="Escribe aquí lo que quieres buscar"
           prefix-icon="el-icon-search"
           v-model="search"
         ></el-input>
-        <el-button
-          type="primary"
-          icon="el-icon-search"
-          v-on:click="searchDocs"
-        >Buscar documentos</el-button>
+
       </center>
     </center><br><br>
 
@@ -108,6 +104,12 @@
       >
         <br><br>
         <p><b>Resultados encontrados en documentos </b></p><br>
+        <el-button
+          type="primary"
+          icon="el-icon-search"
+          v-on:click="searchDocs"
+        >Buscar " {{search}} " en documentos</el-button>
+        <br>
         <div
           class="secciones_docs"
           v-for="(archivo, index) in docs.archivos"
@@ -316,6 +318,9 @@ export default {
   cursor: pointer;
   transition: 1s;
 }
+.input-buscador {
+  width: 400px;
+}
 .router-paginas b {
   font-weight: 700;
   color: rgb(0, 102, 255);
@@ -457,7 +462,27 @@ export default {
   color: #999;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
+  .input-buscador {
+    width: 100%;
+    max-width: 400px;
+  }
+  .contenedor-paginas {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  .router-paginas {
+    padding: 10px;
+    margin-bottom: 14px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 1s;
+  }
+
   .card-col {
     width: 100%;
     max-width: 500px;
