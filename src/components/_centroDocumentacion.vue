@@ -99,6 +99,7 @@
                 v-on:click="gialogOptions(item)"
               >more_vert</i>
             </div>
+
             <div
               v-else-if="currentFile.id==item.id"
               v-loading="loadingFile"
@@ -111,6 +112,7 @@
               <i class="material-icons">insert_drive_file</i>
               <p>{{item.nombre}}</p>
             </div>
+
             <div
               v-else
               class="file"
@@ -290,12 +292,13 @@ export default {
         });
     },
     validateGetContentFile(e, file) {
+      this.loadingFile = true;
       if (e.target.classList[1] != "file_delete") {
         this.currentFile = file;
         if (!file.es_privado) {
           this.getContentFile();
         } else {
-          this.getPasswordFile = true;
+          this.getContentFile();
         }
       }
     },
@@ -310,6 +313,7 @@ export default {
           responseType: "arraybuffer"
         })
         .then(response => {
+          console.log(response);
           let image = btoa(
             new Uint8Array(response.data).reduce(
               (data, byte) => data + String.fromCharCode(byte),
@@ -324,6 +328,7 @@ export default {
           dlnk.click();
           this.getPasswordFile = false;
           this.currentFile.id = 0;
+          this.loadingFile = false;
         });
     },
     getFirstColumn(value) {
