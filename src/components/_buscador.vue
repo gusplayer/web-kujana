@@ -103,7 +103,7 @@
         v-if="search != ''"
       >
         <br><br>
-        <p><b>Resultados encontrados en documentos </b></p><br>
+        <p><b>Buscar  en documentos </b></p><br>
         <el-button
           type="primary"
           icon="el-icon-search"

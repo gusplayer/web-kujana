@@ -2,12 +2,12 @@
   <section id="documentos">
 
     <Breadcrumb></Breadcrumb>
-    <BannerMicro
+    <!-- <BannerMicro
       :texto="texto"
       :imagen="imagenBanner"
-    ></BannerMicro>
+    ></BannerMicro> -->
 
-    <el-dialog
+    <!-- <el-dialog
       title="Ingresar Contraseña"
       :visible.sync="getPassword"
       class="getPassword"
@@ -39,7 +39,7 @@
         type="primary"
         v-on:click="getContentFile"
       >Validar</el-button>
-    </el-dialog>
+    </el-dialog> -->
 
     <div class="documents">
 
@@ -82,6 +82,7 @@
         <div
           class="documents__column"
           v-for="(column, index) in columns"
+          :key="index"
         >
 
           <template v-for="item in column">
@@ -99,6 +100,18 @@
               >more_vert</i>
             </div>
             <div
+              v-else-if="currentFile.id==item.id"
+              v-loading="loadingFile"
+              element-loading-text="Descargando archivo"
+              element-loading-spinner="el-icon-loading"
+              element-loading-background="rgba(0, 0, 0, 0.8)"
+              class="file"
+              :id="`file${item.id}`"
+            >
+              <i class="material-icons">insert_drive_file</i>
+              <p>{{item.nombre}}</p>
+            </div>
+            <div
               v-else
               class="file"
               :id="`file${item.id}`"
@@ -107,6 +120,19 @@
               <i class="material-icons">insert_drive_file</i>
               <p>{{item.nombre}}</p>
             </div>
+            <!-- <div
+              v-loading="loadingFile"
+              element-loading-text="Descargando, por favor espere..."
+              element-loading-spinner="el-icon-loading"
+              element-loading-background="rgba(0, 0, 0, 0.8)"
+              v-else
+              class="file"
+              :id="`file${item.id}`"
+              v-on:click="validateGetContentFile($event, item)"
+            >
+              <i class="material-icons">insert_drive_file</i>
+              <p>{{item.nombre}}</p>
+            </div> -->
           </template>
 
         </div>
@@ -123,6 +149,7 @@
       :download='this.currentFile.nombre'
       style="display:none;"
     />
+
   </section>
 </template>
 
@@ -141,6 +168,7 @@ export default {
   },
   data() {
     return {
+      loadingFile: true,
       texto: null,
       imagenBanner: require("../assets/documentacion.jpg"),
       foldersData: [],
@@ -159,7 +187,9 @@ export default {
       columnFolderSelected: 0,
       waitContent: true,
       nameCurrentDownloadFile: "",
-      currentFile: "",
+      currentFile: {
+        id: 0
+      },
       newFile: null,
       newFileName: "",
       newFileDesc: "",
@@ -211,6 +241,20 @@ export default {
         }
       }, 500);
     },
+    // validateGetFiles(e, folder, index) {
+    //   if (e.target.classList[1] != "folder_options") {
+    //     if (!this.waitContent) {
+    //       this.selectedItem(folder, index);
+    //       this.getPassword = false;
+    //       if (!folder.es_privado) {
+    //         this.waitContent = true;
+    //         this.getFiles();
+    //       } else {
+    //         this.getPassword = true;
+    //       }
+    //     }
+    //   }
+    // },
     validateGetFiles(e, folder, index) {
       if (e.target.classList[1] != "folder_options") {
         if (!this.waitContent) {
@@ -279,6 +323,7 @@ export default {
           dlnk.href = base64;
           dlnk.click();
           this.getPasswordFile = false;
+          this.currentFile.id = 0;
         });
     },
     getFirstColumn(value) {
@@ -286,18 +331,6 @@ export default {
         this.waitContent = false;
         this.columns.push(value);
       }
-    },
-    deleteFolder() {
-      axios
-        .delete(
-          `https://panel.fablabkujana.com/carpetas/${this.currentFolderEdit.id}`
-        )
-        .then(response => {
-          document.getElementById(
-            `folder${this.currentFolderEdit.id}`
-          ).style.display = "none";
-          this.dialogEditFolder = false;
-        });
     },
     selectedItem(folder, index) {
       this.currentFolder = folder;
@@ -572,6 +605,10 @@ export default {
   background-color: #fff;
   transition: 0.3s;
 }
+.documents__column .folder:hover {
+  background-color: #1a68c2;
+  color: white;
+}
 .documents__column .folder i:first-child {
   color: #20a0ff;
 }
@@ -609,6 +646,12 @@ export default {
 }
 .documents__column .file i:first-child {
   color: #f7ba2a;
+  transition: 1s;
+}
+.documents__column .file:hover {
+  color: #fff;
+  transition: 0.3s;
+  background-color: #848f99;
 }
 .documents__column .file i:last-child {
   color: rgba(208, 215, 221, 0.73);
