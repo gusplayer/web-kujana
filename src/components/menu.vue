@@ -273,13 +273,13 @@ export default {
               haveChildren: false,
               childrenDynamic: false,
               url: "/galeria"
-            },
-            {
-              titulo: "Concurso",
-              haveChildren: false,
-              childrenDynamic: false,
-              url: "/formulario"
             }
+            // {
+            //   titulo: "Concurso",
+            //   haveChildren: false,
+            //   childrenDynamic: false,
+            //   url: "/formulario"
+            // }
           ]
         },
         {

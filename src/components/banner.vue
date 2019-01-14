@@ -4,7 +4,7 @@
     arrow="always"
     indicator-position="outside"
   >
-    <el-carousel-item>
+    <!-- <el-carousel-item>
       <a
         class="container"
         href="/formulario"
@@ -17,7 +17,7 @@
           <div class="text">Regístrate gratis !</div>
         </div>
       </a>
-    </el-carousel-item>
+    </el-carousel-item> -->
     <el-carousel-item>
       <a class="banner-url">
         <img src="../assets/banners/b3.jpg" />
